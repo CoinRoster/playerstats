@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    
+    <head>
+        
+        <title>stats</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;              
+            }
+            th, td {
+                padding: 7px;
+                text-align: left;
+                background-color: #f2f2f2;
+                
+            }
+            .modal {
+                display: none; /* Hidden by default */
+                position: absolute; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 10px;
+                border: 1px solid #888;
+                width: 50%;
+                font-size: 10px;
+                //text-align: left;                
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+        
+        
+    </head>
+    
+    <body>
+        
+        <div id="myModal" class="modal">
+              <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 id="player_name">name</h1>
+     
+                
+            
+            
+            
+                <div>
+                <img src="PlayerHeadshot.png" alt="durantpic" height="80" width="80">
+                <ul style="list-style-type:none">
+                    <li id="team">team</li>
+                    <li id="pos">pos</li>
+                    <li id="height">height</li>
+                    <li id="weight">weight</li>
+                    <li id="born">born</li>
+                </ul>
+                </div>
+            
+            <p id="season_stats"></p>
+            <table id="season_stats_table">
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            </tr>
+            <tr>            
+            <td>cell 7</td>
+            <td>cell 8</td>
+            <td>cell 9</td>
+            <td>cell 10</td>
+            <td>cell 11</td>
+            <td>cell 12</td>
+            </tr>
+        </table>
+            <p id="prev_games"></p>
+            <table id="prev_games_table">
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+        </table>
+            </div>
+        </div>
+        
+        <!-- Trigger/Open The Modal -->
+        <p id="link">Kevin Durant</p>
+        
+        <script>
+        var data = {
+  "last_five_games": [
+    {
+      "BLK": "0",
+      "AST": "7",
+      "SCORE": "W 110-102",
+      "FG%": ".652",
+      "3P%": ".667",
+      "STL": "1",
+      "OPP": "@ CLE",
+      "REB": "13",
+      "PTS": "43",
+      "DATE": "Wed 6/6",
+      "FGM-FGA": "15-23",
+      "MIN": "43",
+      "3PM-3PA": "6-9",
+      "FT%": "1.000",
+      "PF": "3",
+      "FTM-FTA": "7-7",
+      "TO": "3"
+    },
+    {
+      "BLK": "2",
+      "AST": "7",
+      "SCORE": "W 122-103",
+      "FG%": ".714",
+      "3P%": ".667",
+      "STL": "0",
+      "OPP": "vs CLE",
+      "REB": "9",
+      "PTS": "26",
+      "DATE": "Sun 6/3",
+      "FGM-FGA": "10-14",
+      "MIN": "38",
+      "3PM-3PA": "2-3",
+      "FT%": "1.000",
+      "PF": "3",
+      "FTM-FTA": "4-4",
+      "TO": "3"
+    },
+    {
+      "BLK": "3",
+      "AST": "6",
+      "SCORE": "W 124-114",
+      "FG%": ".364",
+      "3P%": ".143",
+      "STL": "1",
+      "OPP": "vs CLE",
+      "REB": "9",
+      "PTS": "26",
+      "DATE": "Thu 5/31",
+      "FGM-FGA": "8-22",
+      "MIN": "46",
+      "3PM-3PA": "1-7",
+      "FT%": ".900",
+      "PF": "3",
+      "FTM-FTA": "9-10",
+      "TO": "1"
+    },
+    {
+      "BLK": "3",
+      "AST": "5",
+      "SCORE": "W 101-92",
+      "FG%": ".524",
+      "3P%": ".455",
+      "STL": "1",
+      "OPP": "@ HOU",
+      "REB": "5",
+      "PTS": "34",
+      "DATE": "Mon 5/28",
+      "FGM-FGA": "11-21",
+      "MIN": "44",
+      "3PM-3PA": "5-11",
+      "FT%": ".700",
+      "PF": "3",
+      "FTM-FTA": "7-10",
+      "TO": "2"
+    },
+    {
+      "BLK": "1",
+      "AST": "4",
+      "SCORE": "W 115-86",
+      "FG%": ".353",
+      "3P%": ".200",
+      "STL": "0",
+      "OPP": "vs HOU",
+      "REB": "7",
+      "PTS": "23",
+      "DATE": "Sat 5/26",
+      "FGM-FGA": "6-17",
+      "MIN": "35",
+      "3PM-3PA": "1-5",
+      "FT%": ".714",
+      "PF": "0",
+      "FTM-FTA": "10-14",
+      "TO": "1"
+    }
+  ],
+  "pos": "SF",
+  "year_stats": {
+    "STAT_TYPE": "2017-18 Postseason",
+    "MPG": "38.5",
+    "FG%": ".490",
+    "PPG": "29.4",
+    "3P%": ".348",
+    "RPG": "7.6",
+    "PFPG": "2.0",
+    "GP": "20",
+    "FGM-FGA": "10.3-20.9",
+    "3PM-3PA": "2.4-6.8",
+    "TOPG": "2.4",
+    "FT%": ".897",
+    "FTM-FTA": "6.6-7.3",
+    "APG": "4.5",
+    "STLPG": "0.7",
+    "BLKPG": "1.1"
+  },
+  "career_stats": {
+    "STAT_TYPE": "Career",
+    "MPG": "37.1",
+    "FG%": ".490",
+    "PPG": "27.1",
+    "3P%": ".384",
+    "RPG": "7.1",
+    "PFPG": "1.9",
+    "GP": "771",
+    "FGM-FGA": "9.2-18.8",
+    "3PM-3PA": "1.9-4.8",
+    "TOPG": "3.1",
+    "FT%": ".882",
+    "FTM-FTA": "6.9-7.8",
+    "APG": "3.9",
+    "STLPG": "1.2",
+    "BLKPG": "1.1"
+  },
+  "Weight": "240 lbs",
+  "birthString": "Sep 29, 1988 in Washington, DC (Age: 29)",
+  "height": "6' 9\"",
+  "team": "GS",
+  "player_id": "3202"
+}
+;          
+      
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var line = document.getElementById("link");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        line.onclick = function() {
+            modal.style.display = "block";
+       
+            var header = document.getElementById("player_name");
+            header.innerHTML = "Kevin Durant";
+            
+            var list = document.getElementById("team");
+            list.innerHTML = "Team: " + data.team;
+            var list = document.getElementById("pos");
+            list.innerHTML = "Pos: " + data.pos;
+            var list = document.getElementById("height");
+            list.innerHTML = "Height: " + data.height;
+            var list = document.getElementById("weight");
+            list.innerHTML = "Weight: " + data.Weight;
+            var list = document.getElementById("born");
+            list.innerHTML = "Born: " + data.birthString;
+            
+            
+            var season_stats = document.getElementById("season_stats");
+            season_stats.innerHTML = data.year_stats.STAT_TYPE;
+            
+            var sst = document.getElementById("season_stats_table").rows[0].cells;
+            sst[0].innerHTML = "PTS";
+            sst[1].innerHTML = "AST";
+            sst[2].innerHTML = "REB";
+            sst[3].innerHTML = "BLK";
+            sst[4].innerHTML = "STL";
+            sst[5].innerHTML = "TO";
+            var sst = document.getElementById("season_stats_table").rows[1].cells;
+            sst[0].innerHTML = data.year_stats.PPG;
+            sst[1].innerHTML = data.year_stats.APG;
+            sst[2].innerHTML = data.year_stats.RPG;
+            sst[3].innerHTML = data.year_stats.BLKPG;
+            sst[4].innerHTML = data.year_stats.STLPG;
+            sst[5].innerHTML = data.year_stats.TOPG;
+            
+            var prev_games = document.getElementById("prev_games");
+            prev_games.innerHTML = "Last Five Games";
+            var pgt = document.getElementById("prev_games_table").rows[0].cells;
+            pgt[0].innerHTML = "Opp";
+            pgt[1].innerHTML = "PTS";
+            pgt[2].innerHTML = "AST";
+            pgt[3].innerHTML = "REB";
+            pgt[4].innerHTML = "BLK";
+            pgt[5].innerHTML = "STL";
+            pgt[6].innerHTML = "TO";
+            var pgt = document.getElementById("prev_games_table").rows[1].cells;
+            pgt[0].innerHTML = data.last_five_games[0].OPP;
+            pgt[1].innerHTML = data.last_five_games[0].PTS;
+            pgt[2].innerHTML = data.last_five_games[0].AST;
+            pgt[3].innerHTML = data.last_five_games[0].REB;
+            pgt[4].innerHTML = data.last_five_games[0].BLK;
+            pgt[5].innerHTML = data.last_five_games[0].STL;
+            pgt[6].innerHTML = data.last_five_games[0].TO;
+            var pgt = document.getElementById("prev_games_table").rows[2].cells;
+            pgt[0].innerHTML = data.last_five_games[1].OPP;
+            pgt[1].innerHTML = data.last_five_games[1].PTS;
+            pgt[2].innerHTML = data.last_five_games[1].AST;
+            pgt[3].innerHTML = data.last_five_games[1].REB;
+            pgt[4].innerHTML = data.last_five_games[1].BLK;
+            pgt[5].innerHTML = data.last_five_games[1].STL;
+            pgt[6].innerHTML = data.last_five_games[1].TO;
+            var pgt = document.getElementById("prev_games_table").rows[3].cells;
+            pgt[0].innerHTML = data.last_five_games[2].OPP;
+            pgt[1].innerHTML = data.last_five_games[2].PTS;
+            pgt[2].innerHTML = data.last_five_games[2].AST;
+            pgt[3].innerHTML = data.last_five_games[2].REB;
+            pgt[4].innerHTML = data.last_five_games[2].BLK;
+            pgt[5].innerHTML = data.last_five_games[2].STL;
+            pgt[6].innerHTML = data.last_five_games[2].TO;
+            var pgt = document.getElementById("prev_games_table").rows[4].cells;
+            pgt[0].innerHTML = data.last_five_games[3].OPP;
+            pgt[1].innerHTML = data.last_five_games[3].PTS;
+            pgt[2].innerHTML = data.last_five_games[3].AST;
+            pgt[3].innerHTML = data.last_five_games[3].REB;
+            pgt[4].innerHTML = data.last_five_games[3].BLK;
+            pgt[5].innerHTML = data.last_five_games[3].STL;
+            pgt[6].innerHTML = data.last_five_games[3].TO;
+            var pgt = document.getElementById("prev_games_table").rows[5].cells;
+            pgt[0].innerHTML = data.last_five_games[4].OPP;
+            pgt[1].innerHTML = data.last_five_games[4].PTS;
+            pgt[2].innerHTML = data.last_five_games[4].AST;
+            pgt[3].innerHTML = data.last_five_games[4].REB;
+            pgt[4].innerHTML = data.last_five_games[4].BLK;
+            pgt[5].innerHTML = data.last_five_games[4].STL;
+            pgt[6].innerHTML = data.last_five_games[4].TO;
+            var pgt = document.getElementById("prev_games_table").rows[6].cells;
+            pgt[0].innerHTML = data.last_five_games[5].OPP;
+            pgt[1].innerHTML = data.last_five_games[5].PTS;
+            pgt[2].innerHTML = data.last_five_games[5].AST;
+            pgt[3].innerHTML = data.last_five_games[5].REB;
+            pgt[4].innerHTML = data.last_five_games[5].BLK;
+            pgt[5].innerHTML = data.last_five_games[5].STL;
+            pgt[6].innerHTML = data.last_five_games[5].TO;
+            
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+        </script>               
+    </body>
+</html>
