@@ -152,6 +152,7 @@ and open the template in the editor.
                     <hr class="seperator">
                     <br>
             <p id="season_stats" class="header"></p>
+            
             <table id="season_stats_table">  
             <tr class="category">
             <td>cell 1</td>
@@ -160,18 +161,46 @@ and open the template in the editor.
             <td>cell 4</td>
             <td>cell 5</td>
             <td>cell 6</td>
+            <td>cell 7</td>
             </tr>
             
-            <tr>            
-            <td>cell 7</td>
+            <tr>   
             <td>cell 8</td>
             <td>cell 9</td>
             <td>cell 10</td>
             <td>cell 11</td>
             <td>cell 12</td>
+            <td>cell 13</td>
+            <td>cell 14</td>
             </tr>
         </table>
+            
+            <p id="career_stats" class="header"></p>
+            
+            <table id="career_stats_table">  
+            <tr class="category">
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            
+            <tr>   
+            <td>cell 8</td>
+            <td>cell 9</td>
+            <td>cell 10</td>
+            <td>cell 11</td>
+            <td>cell 12</td>
+            <td>cell 13</td>
+            <td>cell 14</td>
+            </tr>
+        </table>
+            
             <p id="prev_games" class="header"></p>
+            
             <table id="prev_games_table">
             <tr class="category">
             <td>cell 1</td>
@@ -180,7 +209,8 @@ and open the template in the editor.
             <td>cell 4</td>
             <td>cell 5</td>
             <td>cell 6</td>
-            <td>cell 7</td>           
+            <td>cell 7</td>
+            <td>cell 8</td>
             </tr>
             
             <tr>
@@ -191,6 +221,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             <td>cell 7</td>
+            <td>cell 8</td>
             
             </tr>
             <tr>
@@ -201,6 +232,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             <td>cell 7</td>
+            <td>cell 8</td>
             
             </tr>
             <tr>
@@ -211,6 +243,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             <td>cell 7</td>
+            <td>cell 8</td>
             
             </tr>
             <tr>
@@ -221,6 +254,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             <td>cell 7</td>
+            <td>cell 8</td>
             
             </tr>
             <tr>
@@ -231,6 +265,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             <td>cell 7</td>
+            <td>cell 8</td>
             
             </tr>
         </table>
@@ -423,40 +458,66 @@ and open the template in the editor.
             season_stats.innerHTML = data.year_stats.STAT_TYPE;
 
             var sst = document.getElementById("season_stats_table").rows[0].cells;
-            sst[0].innerHTML = "PTS";
-            sst[1].innerHTML = "AST";
+            sst[0].innerHTML = "MIN";
+            sst[1].innerHTML = "PTS";
             sst[2].innerHTML = "REB";
-            sst[3].innerHTML = "BLK";
-            sst[4].innerHTML = "STL";
-            sst[5].innerHTML = "TO";
+            sst[3].innerHTML = "AST";
+            sst[4].innerHTML = "BLK";
+            sst[5].innerHTML = "STL";
+            sst[6].innerHTML = "TO";
             var sst = document.getElementById("season_stats_table").rows[1].cells;
-            sst[0].innerHTML = data.year_stats.PPG;
-            sst[1].innerHTML = data.year_stats.APG;
+            sst[0].innerHTML = data.year_stats.MPG;
+            sst[1].innerHTML = data.year_stats.PPG;
             sst[2].innerHTML = data.year_stats.RPG;
-            sst[3].innerHTML = data.year_stats.BLKPG;
-            sst[4].innerHTML = data.year_stats.STLPG;
-            sst[5].innerHTML = data.year_stats.TOPG;
+            sst[3].innerHTML = data.year_stats.APG;
+            sst[4].innerHTML = data.year_stats.BLKPG;
+            sst[5].innerHTML = data.year_stats.STLPG;
+            sst[6].innerHTML = data.year_stats.TOPG;
+            
+            
+            var career_stats = document.getElementById("career_stats");
+            career_stats.innerHTML = "Career Stats";
+
+            var cst = document.getElementById("career_stats_table").rows[0].cells;
+            cst[0].innerHTML = "MIN";
+            cst[1].innerHTML = "PTS";
+            cst[2].innerHTML = "REB";
+            cst[3].innerHTML = "AST";
+            cst[4].innerHTML = "BLK";
+            cst[5].innerHTML = "STL";
+            cst[6].innerHTML = "TO";
+            var cst = document.getElementById("career_stats_table").rows[1].cells;
+            cst[0].innerHTML = data.career_stats.MPG;
+            cst[1].innerHTML = data.career_stats.PPG;
+            cst[2].innerHTML = data.career_stats.RPG;
+            cst[3].innerHTML = data.career_stats.APG;
+            cst[4].innerHTML = data.career_stats.BLKPG;
+            cst[5].innerHTML = data.career_stats.STLPG;
+            cst[6].innerHTML = data.career_stats.TOPG;
+
             
             var prev_games = document.getElementById("prev_games");
             prev_games.innerHTML = "Last Five Games";
             var pgt = document.getElementById("prev_games_table").rows[0].cells;
             pgt[0].innerHTML = "Opp";
-            pgt[1].innerHTML = "PTS";
-            pgt[2].innerHTML = "AST";
+            pgt[1].innerHTML = "MIN";
+            pgt[2].innerHTML = "PTS";
             pgt[3].innerHTML = "REB";
-            pgt[4].innerHTML = "BLK";
-            pgt[5].innerHTML = "STL";
-            pgt[6].innerHTML = "TO";                   
+            pgt[4].innerHTML = "AST";
+            pgt[5].innerHTML = "BLK";
+            pgt[6].innerHTML = "STL";
+            pgt[7].innerHTML = "TO";                   
             
             for(var i = 1;i <= 5;i++){
                 var pgt = document.getElementById("prev_games_table").rows[i].cells;
                 pgt[0].innerHTML = data.last_five_games[j].OPP + "<br />" + data.last_five_games[j].SCORE;
-                pgt[1].innerHTML = data.last_five_games[j].PTS;
-                pgt[2].innerHTML = data.last_five_games[j].AST;                  
-                pgt[3].innerHTML = data.last_five_games[j].REB;
-                pgt[4].innerHTML = data.last_five_games[j].BLK;
-                pgt[5].innerHTML = data.last_five_games[j].STL;
-                pgt[6].innerHTML = data.last_five_games[j].TO;
+                pgt[1].innerHTML = data.last_five_games[j].MIN;
+                pgt[2].innerHTML = data.last_five_games[j].PTS;
+                pgt[3].innerHTML = data.last_five_games[j].REB;                  
+                pgt[4].innerHTML = data.last_five_games[j].AST;
+                pgt[5].innerHTML = data.last_five_games[j].BLK;
+                pgt[6].innerHTML = data.last_five_games[j].STL;
+                pgt[7].innerHTML = data.last_five_games[j].TO;
                 j++;
             }
         };
