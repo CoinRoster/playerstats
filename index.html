@@ -13,10 +13,22 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <style>
+            .pic{
+                margin-left: 2.5%;
+                z-index: 1;
+                position:absolute;
+                
+            }
+            .pic2{
+                position:absolute;
+                z-index: 0;
+                margin-left: 1%;
+            }
             .seperator{
                 width: 98%;
                 margin-left: 0.5%;
                 margin-top: -1%;
+                opacity: .3;
             }
             .category{
                 font-weight: bold;
@@ -36,6 +48,7 @@ and open the template in the editor.
                 border: 0;
                 border-top: 0.8px solid #8c8c8c;
                 border-bottom: 1px solid #fff;
+                opacity: .3;
             }
             h1{
                 font-family: Arial;
@@ -49,14 +62,13 @@ and open the template in the editor.
                 margin-right: 10%;
                 font-family: sans-serif;
                 font-size: 15px;
-                color: orange;
-                list-style-type:none
+                color: #00ff6a;
+                list-style-type:none;
             }
             li{
                margin-top: 5px;
             }
             table{
-                border: 1;
                 border-collapse: collapse;
                 width:100%;
                 
@@ -93,7 +105,7 @@ and open the template in the editor.
                 padding: 20px;
                 border: 1px solid #888;
                 width: 50%;
-                font-size: 10px;               
+                font-size: 10px;
             }
 
             /* The Close Button */
@@ -126,8 +138,8 @@ and open the template in the editor.
             <hr>
             
                 <div id="header">
-                    <img alt="playerpic" width="193" height="140" id="pic">
-                    
+                    <img alt="playerpic" width="193" height="140" id="pic" class="pic">
+                    <img alt="playerpic" width="100" height="100" id="pic2" class="pic2">
                     <ul>
                         <li id="team">team</li>
                         <li id="pos">pos</li>
@@ -149,6 +161,7 @@ and open the template in the editor.
             <td>cell 5</td>
             <td>cell 6</td>
             </tr>
+            
             <tr>            
             <td>cell 7</td>
             <td>cell 8</td>
@@ -167,9 +180,9 @@ and open the template in the editor.
             <td>cell 4</td>
             <td>cell 5</td>
             <td>cell 6</td>
-            <td>cell 7</td>
-            
+            <td>cell 7</td>           
             </tr>
+            
             <tr>
             <td>cell 1</td>
             <td>cell 2</td>
@@ -391,6 +404,8 @@ and open the template in the editor.
             
             var player_pic = document.getElementById('pic');
             player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
+            var logo = document.getElementById('pic2');
+            logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
             
             var list = document.getElementById("team");
             list.innerHTML = "Team: " + data.team;
