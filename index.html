@@ -13,16 +13,25 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <style>
-            .pic{
-                margin-left: 2.5%;
-                z-index: 1;
+            .spot{
+                margin-top: -5%;
+                margin-left: 0.75%;
+                z-index: 0;
+                opacity: 0.8;
+                
+            }
+            .headshot{
+                margin-top: -1.5%;
+                margin-left: 1.75%;
+                z-index: 2;
                 position:absolute;
                 
             }
-            .pic2{
+            .logo{
                 position:absolute;
-                z-index: 0;
-                margin-left: 1%;
+                z-index: 1;
+                margin-left: 1.5%;
+                margin-top: -1%;
             }
             .seperator{
                 width: 98%;
@@ -59,7 +68,7 @@ and open the template in the editor.
             }
             ul{
                 float: right; 
-                margin-right: 10%;
+                margin-right: 9%;
                 font-family: sans-serif;
                 font-size: 15px;
                 color: #00ff6a;
@@ -95,7 +104,7 @@ and open the template in the editor.
                 height: 100%; /* Full height */
                 overflow: auto; /* Enable scroll if needed */
                 background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */             
+                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */   
             }
 
             /* Modal Content */
@@ -103,9 +112,9 @@ and open the template in the editor.
                 background-color: rgb(55,56,57);//rgb(35,36,38);
                 margin: auto;
                 padding: 20px;
-                border: 1px solid #888;
                 width: 50%;
-                font-size: 10px;
+                border: 10px solid #5ea600;//#aeff44;
+                border-radius: 15px;
             }
 
             /* The Close Button */
@@ -127,7 +136,7 @@ and open the template in the editor.
         
     </head>
     
-    <body>
+    <body style="background-color: rgb(35,36,38);">
         
         <div id="myModal" class="modal">
               <!-- Modal content -->
@@ -138,8 +147,9 @@ and open the template in the editor.
             <hr>
             
                 <div id="header">
-                    <img alt="playerpic" width="193" height="140" id="pic" class="pic">
-                    <img alt="playerpic" width="100" height="100" id="pic2" class="pic2">
+                    <img alt="playerpic" width="219" height="160" id="headshot" class="headshot">
+                    <img alt="logo" width="110" height="110" id="logo" class="logo">
+                    <img src="spotlight.png" alt="spot" width="230" height="175" class="spot">
                     <ul>
                         <li id="team">team</li>
                         <li id="pos">pos</li>
@@ -273,7 +283,7 @@ and open the template in the editor.
         </div>
         
         <!-- Trigger/Open The Modal -->
-        <p id="link">Kevin Durant</p>
+        <p id="link" class="header">Kevin Durant</p>
         
         <script>
         var i;
@@ -437,10 +447,12 @@ and open the template in the editor.
             var header = document.getElementById("player_name");
             header.innerHTML = "Kevin Durant";
             
-            var player_pic = document.getElementById('pic');
+            var player_pic = document.getElementById('headshot');
             player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
-            var logo = document.getElementById('pic2');
+            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
+            var logo = document.getElementById('logo');
             logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
+            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mia.png&w=110&h=110&transparent=true';
             
             var list = document.getElementById("team");
             list.innerHTML = "Team: " + data.team;
