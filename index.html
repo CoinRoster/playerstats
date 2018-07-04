@@ -11,32 +11,84 @@ and open the template in the editor.
         <title>stats</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <style>
+            .titlename{
+                font-family: Arial;
+                color: #00ff6a;
+            }
+            .wh{
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-size: 15px;
+                font-weight: bold;
+            }/*
+
+            .blank{
+                width:280px;
+                height:10px;
+                //margin-right:0px;
+                float:left;
+                //margin-bottom: 10%; 
+            }
+            .name{                
+                //float:left;
+                //width:100%;
+                //margin-bottom: 10%;
+                //float: right;    
+            }/*
+            h1{
+                font-family: Arial;
+                color: #00ff6a;
+            }
+            hr{
+                width: 57%;
+                margin-right: 1%;
+                margin-bottom: -3%;
+                margin-top: -2%;
+                border: 0;
+                border-top: 0.8px solid #8c8c8c;
+                border-bottom: 1px solid #fff;
+                opacity: .3;
+                
+            }
+            .lists{
+                width:370px;
+                height:100px;                
+                float:left;
+            }*/
+            .picture{
+                margin-top: -15%;
+                margin-bottom: -20%;
+            }
             .spot{
-                margin-top: -5%;
-                margin-left: 0.75%;
+                //margin-top: -18%;
+                //margin-left: 0.75%;
+                //margin-bottom: -25%;
                 z-index: 0;
                 opacity: 0.8;
                 
             }
             .headshot{
-                margin-top: -1.5%;
-                margin-left: 1.75%;
+                //margin-top: -1.5%;
+                //margin-left: 1.75%;
                 z-index: 2;
                 position:absolute;
-                
             }
             .logo{
                 position:absolute;
                 z-index: 1;
-                margin-left: 1.5%;
-                margin-top: -1%;
+                //margin-left: 1.5%;
+                //margin-top: -1%;
             }
             .seperator{
                 width: 98%;
                 margin-left: 0.5%;
-                margin-top: -1%;
+                //margin-top: -1%;
                 opacity: .3;
             }
             .category{
@@ -51,37 +103,33 @@ and open the template in the editor.
                 font-weight: bold;
             }
             hr{
-                width: 56%;
-                margin-left: 42%;
-                margin-bottom: -1%;
-                border: 0;
-                border-top: 0.8px solid #8c8c8c;
-                border-bottom: 1px solid #fff;
-                opacity: .3;
+                //width: 56%;
+                //margin-left: 42%;
+                //margin-bottom: -1%;
+                //border: 0;
+                //border-top: 0.8px solid #8c8c8c;
+                //border-bottom: 1px solid #fff;
+                //opacity: .3;
             }
             h1{
-                font-family: Arial;
-                color: #00ff6a;
-                margin-left: 42%;
-                margin-bottom: 0%;
-                padding-bottom: 0px;
+                //font-family: Arial;
+                //color: #00ff6a;
+                //margin-left: 42%;
+                //margin-bottom: 0%;
+                //padding-bottom: 0px;
             }
             ul{
-                float: right; 
-                margin-right: 9%;
                 font-family: sans-serif;
                 font-size: 15px;
                 color: #00ff6a;
                 list-style-type:none;
             }
             li{
-               margin-top: 5px;
+               margin-bottom: 5px;
             }
             table{
                 border-collapse: collapse;
-                width:100%;
-                
-                
+                width:100%;  
             }
             th, td {
                 padding: 2px; 
@@ -104,7 +152,8 @@ and open the template in the editor.
                 height: 100%; /* Full height */
                 overflow: auto; /* Enable scroll if needed */
                 background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */   
+                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */ 
+                
             }
 
             /* Modal Content */
@@ -112,7 +161,7 @@ and open the template in the editor.
                 background-color: rgb(55,56,57);//rgb(35,36,38);
                 margin: auto;
                 padding: 20px;
-                width: 50%;
+                width: 60%;
                 border: 10px solid #5ea600;//#aeff44;
                 border-radius: 15px;
             }
@@ -137,33 +186,93 @@ and open the template in the editor.
     </head>
     
     <body style="background-color: rgb(35,36,38);">
-        
         <div id="myModal" class="modal">
               <!-- Modal content -->
             <div class="modal-content">
             <span class="close">&times;</span>
-            <h1 id="player_name">name</h1>
-                    
-            <hr>
             
-                <div id="header">
-                    <img alt="playerpic" width="219" height="160" id="headshot" class="headshot">
-                    <img alt="logo" width="110" height="110" id="logo" class="logo">
-                    <img src="spotlight.png" alt="spot" width="230" height="175" class="spot">
-                    <ul>
-                        <li id="team">team</li>
-                        <li id="pos">pos</li>
-                        <li id="height">height</li>
-                        <li id="weight">weight</li>
-                        <li id="born">born</li>
-                    </ul>
-                </div>   
-                    
-                    <hr class="seperator">
-                    <br>
-            <p id="season_stats" class="header"></p>
+                <div class="container-fluid">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                    <h1 id="player_name" class="titlename">name</h1>        
+                    <hr>                
+                    </div> 
+                </div>
+            <div class="container-fluid">
+                <div class="col-md-6">
+                    <div id="picture" class="picture">
+                        <div class="headshot">                        
+                            <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
+                        </div>
+                        <div class="logo">
+                            <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
+                        </div>
+                        <div class="spot">
+                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="table-responsive">
+                    <table >
+                        <tr>
+                        <td class="wh">Team</td>
+                        <td class="wh"> Pos</td>
+                        <td class="wh">Height</td>
+                        <td class="wh">Weight</td>
+                        </tr>
+                        <tr>
+                        <td id="team"></td>
+                        <td id="pos"></td>
+                        <td id="height"></td>
+                        <td id="weight"></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                        <td class="wh">Born</td>
+                        </tr>
+                        <tr>
+                        <td id="born"></td>
+                        </tr>                        
+                    </table>
+                </div>
+                </div> 
+            </div>
             
-            <table id="season_stats_table">  
+
+            <hr class="seperator">
+            
+            <div class="table-responsive">
+
+            
+            
+            <table id="season_stats_table">
+                <caption id="season_stats" class="header"></caption>
+            <tr class="category">
+            <td>cell 1</td>
+            <td>cell 2</td>
+            <td>cell 3</td>
+            <td>cell 4</td>
+            <td>cell 5</td>
+            <td>cell 6</td>
+            <td>cell 7</td>
+            </tr>
+            <tr>   
+            <td>cell 8</td>
+            <td>cell 9</td>
+            <td>cell 10</td>
+            <td>cell 11</td>
+            <td>cell 12</td>
+            <td>cell 13</td>
+            <td>cell 14</td>
+            </tr>
+        </table>
+            
+
+            
+            <table id="career_stats_table">
+                <caption id="career_stats" class="header"></caption>
             <tr class="category">
             <td>cell 1</td>
             <td>cell 2</td>
@@ -184,34 +293,10 @@ and open the template in the editor.
             <td>cell 14</td>
             </tr>
         </table>
-            
-            <p id="career_stats" class="header"></p>
-            
-            <table id="career_stats_table">  
-            <tr class="category">
-            <td>cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            </tr>
-            
-            <tr>   
-            <td>cell 8</td>
-            <td>cell 9</td>
-            <td>cell 10</td>
-            <td>cell 11</td>
-            <td>cell 12</td>
-            <td>cell 13</td>
-            <td>cell 14</td>
-            </tr>
-        </table>
-            
-            <p id="prev_games" class="header"></p>
+           
             
             <table id="prev_games_table">
+                <caption id="prev_games" class="header"></caption>
             <tr class="category">
             <td>cell 1</td>
             <td>cell 2</td>
@@ -280,6 +365,9 @@ and open the template in the editor.
             </tr>
         </table>
             </div>
+
+            
+             </div>
         </div>
         
         <!-- Trigger/Open The Modal -->
@@ -448,22 +536,24 @@ and open the template in the editor.
             header.innerHTML = "Kevin Durant";
             
             var player_pic = document.getElementById('headshot');
+            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
             player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
             //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
             var logo = document.getElementById('logo');
+            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
             logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
             //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mia.png&w=110&h=110&transparent=true';
             
             var list = document.getElementById("team");
-            list.innerHTML = "Team: " + data.team;
+            list.innerHTML = data.team;
             var list = document.getElementById("pos");
-            list.innerHTML = "Pos: " + data.pos;
+            list.innerHTML = data.pos;
             var list = document.getElementById("height");
-            list.innerHTML = "Height: " + data.height;
+            list.innerHTML = data.height;
             var list = document.getElementById("weight");
-            list.innerHTML = "Weight: " + data.Weight;
+            list.innerHTML = data.Weight;
             var list = document.getElementById("born");
-            list.innerHTML = "Born: " + data.birthString;
+            list.innerHTML = data.birthString;
             
             
             var season_stats = document.getElementById("season_stats");
@@ -510,6 +600,7 @@ and open the template in the editor.
             
             var prev_games = document.getElementById("prev_games");
             prev_games.innerHTML = "Last Five Games";
+            
             var pgt = document.getElementById("prev_games_table").rows[0].cells;
             pgt[0].innerHTML = "Opp";
             pgt[1].innerHTML = "MIN";
