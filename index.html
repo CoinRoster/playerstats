@@ -205,7 +205,7 @@ and open the template in the editor.
                             <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
                         </div>
                         <div class="logo">
-                            <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
+                            <img alt="logo" width="110" height="110" id="logo" class="img img-responsive">
                         </div>
                         <div class="spot">
                             <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive">
@@ -375,7 +375,7 @@ and open the template in the editor.
         
         <script>
         var i;
-        var j = 0;;
+        var j = 0;
         var data = {
   "last_five_games": [
     {
@@ -613,15 +613,15 @@ and open the template in the editor.
             
             for(var i = 1;i <= 5;i++){
                 var pgt = document.getElementById("prev_games_table").rows[i].cells;
-                pgt[0].innerHTML = data.last_five_games[j].OPP + "<br />" + data.last_five_games[j].SCORE;
-                pgt[1].innerHTML = data.last_five_games[j].MIN;
-                pgt[2].innerHTML = data.last_five_games[j].PTS;
-                pgt[3].innerHTML = data.last_five_games[j].REB;                  
-                pgt[4].innerHTML = data.last_five_games[j].AST;
-                pgt[5].innerHTML = data.last_five_games[j].BLK;
-                pgt[6].innerHTML = data.last_five_games[j].STL;
-                pgt[7].innerHTML = data.last_five_games[j].TO;
-                j++;
+                pgt[0].innerHTML = data.last_five_games[i-1].OPP + "<br />" + data.last_five_games[j].SCORE;
+                pgt[1].innerHTML = data.last_five_games[i-1].MIN;
+                pgt[2].innerHTML = data.last_five_games[i-1].PTS;
+                pgt[3].innerHTML = data.last_five_games[i-1].REB;                  
+                pgt[4].innerHTML = data.last_five_games[i-1].AST;
+                pgt[5].innerHTML = data.last_five_games[i-1].BLK;
+                pgt[6].innerHTML = data.last_five_games[i-1].STL;
+                pgt[7].innerHTML = data.last_five_games[i-1].TO;
+                //j++;
             }
         };
 
