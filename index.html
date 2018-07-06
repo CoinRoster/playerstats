@@ -612,7 +612,7 @@ and open the template in the editor.
             
             for(var i = 1;i <= 5;i++){
                 var pgt = document.getElementById("prev_games_table").rows[i].cells;
-                pgt[0].innerHTML = data.last_five_games[i-1].OPP + "<br />" + data.last_five_games[j].SCORE;
+                pgt[0].innerHTML = data.last_five_games[i-1].OPP + "<br />" + data.last_five_games[i-1].SCORE;
                 pgt[1].innerHTML = data.last_five_games[i-1].MIN;
                 pgt[2].innerHTML = data.last_five_games[i-1].PTS;
                 pgt[3].innerHTML = data.last_five_games[i-1].REB;                  
