@@ -20,35 +20,18 @@ and open the template in the editor.
                 font-family: Arial;
                 color: #00ff6a;
             }
-            .name{                
-                //float:left;
-                //width:100%;
-                //margin-bottom: 10%;
-                //float: right;    
-            }/*
-            h1{
-                font-family: Arial;
-                color: #00ff6a;
-            }
-            hr{
-                width: 57%;
-                margin-right: 1%;
-                margin-bottom: -3%;
-                margin-top: -2%;
-                border: 0;
-                border-top: 0.8px solid #8c8c8c;
-                border-bottom: 1px solid #fff;
-                opacity: .3;
-                
-            }
-            .lists{
-                width:370px;
-                height:100px;                
-                float:left;
-            }*/
+            caption{
+                    font-size: 15px; 
+                    margin-bottom: 0%;
+                    font-family: verdana;
+                    color: #00ff6a;
+                    background-color: #232426;
+                    font-weight: bold;
+                }
+            /*
             .picture{
                 //margin-top: -15%;
-                //margin-bottom: -20%;*/
+                //margin-bottom: -20%;
             }
             .spot{
                 //margin-top: -18%;
@@ -71,6 +54,7 @@ and open the template in the editor.
                 //margin-left: 1.5%;
                 //margin-top: -1%;
             }
+            */
             .seperator{
                 width: 98%;
                 margin-left: 0.5%;
@@ -87,31 +71,6 @@ and open the template in the editor.
                 background-color: #232426;
                 font-size: 15px;
                 font-weight: bold;
-            }
-            hr{
-                //width: 56%;
-                //margin-left: 42%;
-                //margin-bottom: -1%;
-                //border: 0;
-                //border-top: 0.8px solid #8c8c8c;
-                //border-bottom: 1px solid #fff;
-                //opacity: .3;
-            }
-            h1{
-                //font-family: Arial;
-                //color: #00ff6a;
-                //margin-left: 42%;
-                //margin-bottom: 0%;
-                //padding-bottom: 0px;
-            }
-            ul{
-                font-family: sans-serif;
-                font-size: 15px;
-                color: #00ff6a;
-                list-style-type:none;
-            }
-            li{
-               margin-bottom: 5px;
             }
             table{
                 width:100%;
@@ -150,7 +109,6 @@ and open the template in the editor.
                 border: 10px solid #5ea600;//#aeff44;
                 border-radius: 15px;
             }
-
             /* The Close Button */
             .close {
                 color: #aaaaaa;
@@ -164,7 +122,50 @@ and open the template in the editor.
                 color: #000;
                 text-decoration: none;
                 cursor: pointer;
+            }   
+            div.example {
+              background-color: lightgrey;
+              padding: 20px;
             }
+            #tableinfo{
+                display: none;
+            }
+
+            @media screen and (min-width: 601px) {
+              div.example {
+                background-color: blue;
+              }
+            }
+
+            @media screen and (max-width: 600px) {
+                div.example {
+                    background-color: red;
+                    max-height: 10%;
+                }
+                .modal-content {
+                    width: 90vw;
+                    //height: 100vh;
+                }
+                #picture{
+                    transition: top 0.3s;
+                    //display: none;
+                }
+                #opp{
+                    font-size: 2vw;
+                }
+                p{
+                    font-size: 1vw;
+                }
+                #tableinfo{
+                    display: block;
+                    
+                }
+                #infolist{
+                    display: none;
+                }
+                #player_name{
+                    text-align: center;
+                }
         </style>
         
         
@@ -173,18 +174,22 @@ and open the template in the editor.
     <body style="background-color: rgb(35,36,38);">
         <div id="myModal" class="modal">
               <!-- Modal content -->
+             
             <div class="modal-content">
+
             <span class="close">&times;</span>
             
                 <div class="container-fluid">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
-                    <h1 id="player_name" class="titlename" style="font-size:3vw;">name</h1>        
+                    <h1 id="player_name" class="titlename" style="font-size:30px;">name</h1> 
+                    
                     <hr>                
+                    
                     </div> 
                 </div>
             <div class="container-fluid">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                     <div id="picture" class="picture">
                                             
                             <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive" style="z-index: 2; position:absolute;">
@@ -193,18 +198,42 @@ and open the template in the editor.
                             <img alt="logo" width="110" height="110" id="logo" class="img-responsive" style="z-index: 1; position:absolute;">
                         
                         
-                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive" style="z-index: 0; opacity: 0.8; position: absolute; margin-top: -8%; margin-left: -2%">  
+                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive" style="z-index: 0; opacity: 0.8; position: absolute; margin-top: -8%; margin-left: -2%;">  
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-0">
+                <div class="col-md-6 col-sm-6 col-xs-6">
 
-                    <div style="font-size:1.1vw; text-align: left; font-family: sans-serif; font-size: 15px; color: #00ff6a;">                       
-                        <p id="team"></p>
-                        <p id="pos"></p>
-                        <p id="height"></p>
-                        <p id="weight"></p>
-                        <p id="born"></p>
+                    <div id="infolist" style="text-align: left; font-family: sans-serif; font-size: 15px; color: #00ff6a;">                       
+                        <p id="team" style="font-size:14px;"></p>
+                        <p id="pos" style="font-size:14px;"></p>
+                        <p id="height" style="font-size:14px;"></p>
+                        <p id="weight" style="font-size:14px;"></p>
+                        <p id="born" style="font-size:14px;"></p>
                     </div>
+                    
+                    <div id="tableinfo">
+                        <table>
+                            <tr>
+                                <td class="header">Team</td>
+                                <td class="header">Pos</td>
+                                <td class="header">Height</td>
+                                <td class="header">Weight</td>
+                            </tr>
+                            <tr>
+                                <td id="team2"></td>
+                                <td id="pos2"></td>
+                                <td id="height2"></td>
+                                <td id="weight2"></td>
+                            </tr>
+                            <tr>
+                                <td class="header" colspan="4">Born</td>
+                            </tr>
+                            <tr>
+                                <td id="born2" colspan="4"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
                 </div> 
             </div>
             
@@ -214,7 +243,7 @@ and open the template in the editor.
             <div class="table-responsive">
             
             <table id="season_stats_table">
-                <caption id="season_stats" class="header"></caption>
+                <caption id="season_stats"></caption>
             <tr class="category">
             <td>cell 1</td>
             <td>cell 2</td>
@@ -238,7 +267,7 @@ and open the template in the editor.
 
             
             <table id="career_stats_table">
-                <caption id="career_stats" class="header"></caption>
+                <caption id="career_stats"></caption>
             <tr class="category">
             <td>cell 1</td>
             <td>cell 2</td>
@@ -262,7 +291,7 @@ and open the template in the editor.
            
             
             <table id="prev_games_table">
-                <caption id="prev_games" class="header"></caption>
+                <caption id="prev_games"></caption>
             <tr class="category">
             <td>cell 1</td>
             <td>cell 2</td>
@@ -275,7 +304,7 @@ and open the template in the editor.
             </tr>
             
             <tr>
-            <td>cell 1</td>
+            <td id="opp">cell 1</td>
             <td>cell 2</td>
             <td>cell 3</td>
             <td>cell 4</td>
@@ -286,7 +315,7 @@ and open the template in the editor.
             
             </tr>
             <tr>
-            <td>cell 1</td>
+            <td id="opp">cell 1</td>
             <td>cell 2</td>
             <td>cell 3</td>
             <td>cell 4</td>
@@ -297,7 +326,7 @@ and open the template in the editor.
             
             </tr>
             <tr>
-            <td>cell 1</td>
+            <td id="opp">cell 1</td>
             <td>cell 2</td>
             <td>cell 3</td>
             <td>cell 4</td>
@@ -308,7 +337,7 @@ and open the template in the editor.
             
             </tr>
             <tr>
-            <td>cell 1</td>
+            <td id="opp">cell 1</td>
             <td>cell 2</td>
             <td>cell 3</td>
             <td>cell 4</td>
@@ -319,7 +348,7 @@ and open the template in the editor.
             
             </tr>
             <tr>
-            <td>cell 1</td>
+            <td id="opp">cell 1</td>
             <td>cell 2</td>
             <td>cell 3</td>
             <td>cell 4</td>
@@ -331,9 +360,8 @@ and open the template in the editor.
             </tr>
         </table>
             </div>
-
-            
-             </div>
+           
+        </div>
         </div>
         
         <!-- Trigger/Open The Modal -->
@@ -519,6 +547,17 @@ and open the template in the editor.
             list.innerHTML = 'Weight: ' + data.Weight;
             var list = document.getElementById("born");
             list.innerHTML = 'Born: ' + data.birthString;
+            
+            var list2 = document.getElementById("team2");
+            list2.innerHTML = data.team;
+            var list2 = document.getElementById("pos2");
+            list2.innerHTML = data.pos;
+            var list2 = document.getElementById("height2");
+            list2.innerHTML = data.height;
+            var list2 = document.getElementById("weight2");
+            list2.innerHTML = data.Weight;
+            var list2 = document.getElementById("born2");
+            list2.innerHTML = data.birthString;
             
             
             var season_stats = document.getElementById("season_stats");
