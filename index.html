@@ -8,7 +8,7 @@ and open the template in the editor.
     
     <head>
         
-        <title>stats</title>
+        <title>Player Stats</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,7 +32,7 @@ and open the template in the editor.
             .picture{
                 //margin-top: -15%;
                 //margin-bottom: -20%;
-            }
+            }/*
             .spot{
                 //margin-top: -18%;
                 //margin-left: 0.75%;
@@ -130,42 +130,51 @@ and open the template in the editor.
             #tableinfo{
                 display: none;
             }
-
-            @media screen and (min-width: 601px) {
-              div.example {
-                background-color: blue;
-              }
+            #infolist{
+                //white-space: nowrap;
+                font-size: 1vw;
             }
-
-            @media screen and (max-width: 600px) {
-                div.example {
-                    background-color: red;
-                    max-height: 10%;
-                }
+           
+            @media screen and (max-width: 767px) {
                 .modal-content {
                     width: 90vw;
                     //height: 100vh;
                 }
                 #picture{
-                    transition: top 0.3s;
-                    //display: none;
+                    display: none;
+                    
                 }
                 #opp{
                     font-size: 2vw;
-                }
+                }/*
                 p{
                     font-size: 1vw;
-                }
+                }*/
                 #tableinfo{
-                    display: block;
-                    
+                    display: inherit;
+                    //white-space: nowrap;
+                }    
+                #player_name{
+                    text-align: left;
+                    white-space: nowrap;
                 }
                 #infolist{
+                    font-size: 1.5vw;
+                    font-weight: bold;
                     display: none;
                 }
-                #player_name{
-                    text-align: center;
+                caption{
+                    //padding: 4px;
+                    font-size: 3vw;
                 }
+                th,td{
+                    font-size: 2vw;
+                }
+                #tableheader{
+                    font-size:3vw;
+                }
+            
+            }
         </style>
         
         
@@ -189,35 +198,37 @@ and open the template in the editor.
                     </div> 
                 </div>
             <div class="container-fluid">
-                <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="col-md-6 col-sm-6 col-xs-0">
                     <div id="picture" class="picture">
-                                            
-                            <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive" style="z-index: 2; position:absolute;">
-                
-                        
-                            <img alt="logo" width="110" height="110" id="logo" class="img-responsive" style="z-index: 1; position:absolute;">
-                        
-                        
-                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive" style="z-index: 0; opacity: 0.8; position: absolute; margin-top: -8%; margin-left: -2%;">  
+                        <div style="z-index: 2; position:absolute;">                     
+                            <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive" >
+                        </div>
+                        <div style="z-index: 1; position:absolute;">
+                            <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
+                        </div>
+                        <div style="z-index: 0; opacity: 0.8; position: absolute; margin-top: -8%; margin-left: -2%;"> 
+                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive">  
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                <div class="col-md-6 col-sm-6 col-xs-12">
 
-                    <div id="infolist" style="text-align: left; font-family: sans-serif; font-size: 15px; color: #00ff6a;">                       
-                        <p id="team" style="font-size:14px;"></p>
-                        <p id="pos" style="font-size:14px;"></p>
-                        <p id="height" style="font-size:14px;"></p>
-                        <p id="weight" style="font-size:14px;"></p>
-                        <p id="born" style="font-size:14px;"></p>
+                    <div id="infolist" style="text-align: left; font-family: sans-serif; color: #00ff6a;">                       
+                        <p id="team"></p>
+                        <p id="pos"></p>
+                        <p id="height"></p>
+                        <p id="weight"></p>
+                        <p id="born"></p>
                     </div>
                     
-                    <div id="tableinfo">
+                    <div id="tableinfo" class="table-responsive">
                         <table>
                             <tr>
-                                <td class="header">Team</td>
-                                <td class="header">Pos</td>
-                                <td class="header">Height</td>
-                                <td class="header">Weight</td>
+                                <td id="tableheader" class="header">Team</td>
+                                <td id="tableheader" class="header">Pos</td>
+                                <td id="tableheader" class="header">Height</td>
+                                <td id="tableheader" class="header">Weight</td>
                             </tr>
                             <tr>
                                 <td id="team2"></td>
@@ -226,10 +237,10 @@ and open the template in the editor.
                                 <td id="weight2"></td>
                             </tr>
                             <tr>
-                                <td class="header" colspan="4">Born</td>
+                                <td id="tableheader" class="header" colspan="4" style="text-align: center;">Born</td>
                             </tr>
                             <tr>
-                                <td id="born2" colspan="4"></td>
+                                <td id="born2" colspan="4" style="text-align: center;"></td>
                             </tr>
                         </table>
                     </div>
@@ -360,7 +371,7 @@ and open the template in the editor.
             </tr>
         </table>
             </div>
-           
+            
         </div>
         </div>
         
@@ -509,9 +520,7 @@ and open the template in the editor.
   "height": "6' 9\"",
   "team": "GS",
   "player_id": "3202"
-}
-;          
-      
+};       
         // Get the modal
         var modal = document.getElementById('myModal');
 
