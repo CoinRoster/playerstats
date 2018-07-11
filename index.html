@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="en">
     
     <head>
         
@@ -16,45 +16,43 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <style>
-            .titlename{
+            #player_name{
+                font-size:30px;
                 font-family: Arial;
+                font-weight: bold;
                 color: #00ff6a;
             }
             caption{
-                    font-size: 15px; 
-                    margin-bottom: 0%;
-                    font-family: verdana;
-                    color: #00ff6a;
-                    background-color: #232426;
-                    font-weight: bold;
-                }
-            /*
-            .picture{
-                //margin-top: -15%;
-                //margin-bottom: -20%;
-            }/*
-            .spot{
-                //margin-top: -18%;
-                //margin-left: 0.75%;
-                //margin-bottom: -25%;
-                z-index: 0;
-                opacity: 0.8;
-                position: absolute;
-                
+                font-size: 15px; 
+                margin-bottom: 0%;
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-weight: bold;
             }
-            .headshot{
-                //margin-top: -1.5%;
-                //margin-left: 1.75%;
+            
+            #picture{
+                position: relative;
+            }
+            #headshot2{
                 z-index: 2;
-                position:absolute;
+                //position:absolute;
+                //top: 15px;
+                position: relative;
             }
-            .logo{
-                position:absolute;
+            #logo2{
+                position: absolute;
+                top: 5px;
+                left: 5px;
                 z-index: 1;
-                //margin-left: 1.5%;
-                //margin-top: -1%;
             }
-            */
+            #spot2{
+                width: 100%;
+                height: 100%;
+                opacity: 0.5;
+                position:absolute;
+                top: -10%;   
+            }
             .seperator{
                 width: 98%;
                 margin-left: 0.5%;
@@ -141,22 +139,19 @@ and open the template in the editor.
                     //height: 100vh;
                 }
                 #picture{
-                    display: none;
-                    
+                    //display: none;
                 }
                 #opp{
                     font-size: 2vw;
-                }/*
-                p{
-                    font-size: 1vw;
-                }*/
+                }
                 #tableinfo{
                     display: inherit;
                     //white-space: nowrap;
                 }    
                 #player_name{
-                    text-align: left;
-                    white-space: nowrap;
+                    font-size: 8vw;
+                    text-align: center;
+                    overflow:  auto;
                 }
                 #infolist{
                     font-size: 1.5vw;
@@ -172,6 +167,9 @@ and open the template in the editor.
                 }
                 #tableheader{
                     font-size:3vw;
+                }
+                .container-fluid{
+                    padding: 0px;
                 }
             
             }
@@ -189,28 +187,32 @@ and open the template in the editor.
             <span class="close">&times;</span>
             
                 <div class="container-fluid">
+                    <div class="col">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
-                    <h1 id="player_name" class="titlename" style="font-size:30px;">name</h1> 
+                    <h1 id="player_name" class="titlename"></h1> 
                     
-                    <hr>                
+                    <hr class="seperator" >                
                     
                     </div> 
-                </div>
-            <div class="container-fluid">
-                <div class="col-md-6 col-sm-6 col-xs-0">
-                    <div id="picture" class="picture">
-                        <div style="z-index: 2; position:absolute;">                     
-                            <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive" >
-                        </div>
-                        <div style="z-index: 1; position:absolute;">
-                            <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
-                        </div>
-                        <div style="z-index: 0; opacity: 0.8; position: absolute; margin-top: -8%; margin-left: -2%;"> 
-                            <img src="spotlight.png" alt="spot" width="230" height="175" class="img-responsive">  
-                        </div>
                     </div>
                 </div>
+            <div class="container-fluid">
+                
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div id="picture" class="picture">
+                            <div id="headshot2"  >                    
+                                <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
+                            </div>
+                            <div id="logo2">
+                                <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
+                            </div>
+                            <div id="spot2">
+                                <img src="spotlight.png" alt="spot" width="230" height="175" id="spot" class="img-responsive">  
+                            </div>
+                        </div>
+                    </div>
+            
                 
                 <div class="col-md-6 col-sm-6 col-xs-12">
 
@@ -245,7 +247,8 @@ and open the template in the editor.
                         </table>
                     </div>
                     
-                </div> 
+                </div>
+                
             </div>
             
 
@@ -544,7 +547,7 @@ and open the template in the editor.
             var logo = document.getElementById('logo');
             //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
             logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mia.png&w=110&h=110&transparent=true';
+            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
             
             var list = document.getElementById("team");
             list.innerHTML = 'Team: ' + data.team;
