@@ -17,7 +17,7 @@ and open the template in the editor.
         
         <style>
             #player_name{
-                font-size:30px;
+                font-size:2.2vw;
                 font-family: Arial;
                 font-weight: bold;
                 color: #00ff6a;
@@ -33,6 +33,8 @@ and open the template in the editor.
             
             #picture{
                 position: relative;
+                overflow: hidden;
+                //margin-left: 50%; 
             }
             #headshot2{
                 z-index: 2;
@@ -49,14 +51,14 @@ and open the template in the editor.
             #spot2{
                 width: 100%;
                 height: 100%;
-                opacity: 0.5;
+                opacity: 0.8;
                 position:absolute;
-                top: -10%;   
+                top: -2%;   
             }
             .seperator{
-                width: 98%;
-                margin-left: 0.5%;
-                //margin-top: -1%;
+                width: 100%;
+                //margin-left: 0.5%;
+                margin-top: -1%;
                 opacity: .3;
             }
             .category{
@@ -87,7 +89,7 @@ and open the template in the editor.
                 display: none; /* Hidden by default */
                 position: absolute; /* Stay in place */
                 z-index: 1; /* Sit on top */
-                padding-top: 100px; /* Location of the box */
+                padding-top: 70px; /* Location of the box */
                 left: 0;
                 top: 0;
                 width: 100%; /* Full width */
@@ -112,7 +114,7 @@ and open the template in the editor.
                 color: #aaaaaa;
                 float: right;
                 font-size: 25px;
-                font-weight: bold;
+                font-weight: lighter;
             }
 
             .close:hover,
@@ -134,8 +136,12 @@ and open the template in the editor.
             }
            
             @media screen and (max-width: 767px) {
+                .modal{
+                    padding-top: 0px;
+                }
                 .modal-content {
                     width: 90vw;
+                    border: 5px solid #5ea600;
                     //height: 100vh;
                 }
                 #picture{
@@ -151,7 +157,10 @@ and open the template in the editor.
                 #player_name{
                     font-size: 8vw;
                     text-align: center;
-                    overflow:  auto;
+                    //overflow:  hidden;
+                }
+                #titledivider{
+                    width: 100%;
                 }
                 #infolist{
                     font-size: 1.5vw;
@@ -163,15 +172,23 @@ and open the template in the editor.
                     font-size: 3vw;
                 }
                 th,td{
-                    font-size: 2vw;
+                    font-size: 3vw;
                 }
                 #tableheader{
                     font-size:3vw;
                 }
                 .container-fluid{
                     padding: 0px;
+                    
+                    //display: flex;
+                    //align-items: center;
+                    //justify-content: center;
                 }
-            
+                #playerphoto{
+                    margin-bottom: 5%;
+                    padding: 0px;
+                }
+                
             }
         </style>
         
@@ -187,19 +204,19 @@ and open the template in the editor.
             <span class="close">&times;</span>
             
                 <div class="container-fluid">
-                    <div class="col">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                   
+                    <div class="col-md-6 col-sm-6" style="padding: 0px;"></div>
+                    <div class="col-md-6 col-sm-6" style="padding: 0px;">
                     <h1 id="player_name" class="titlename"></h1> 
                     
-                    <hr class="seperator" >                
+                    <hr id="titledivider" class="seperator" >                
                     
                     </div> 
-                    </div>
+                    
                 </div>
             <div class="container-fluid">
                 
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div id="playerphoto" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
                         <div id="picture" class="picture">
                             <div id="headshot2"  >                    
                                 <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
@@ -214,7 +231,7 @@ and open the template in the editor.
                     </div>
             
                 
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div id="playerinfo" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
 
                     <div id="infolist" style="text-align: left; font-family: sans-serif; color: #00ff6a;">                       
                         <p id="team"></p>
@@ -224,7 +241,7 @@ and open the template in the editor.
                         <p id="born"></p>
                     </div>
                     
-                    <div id="tableinfo" class="table-responsive">
+                    <div id="tableinfo" class="table-responsive" style="border: 0;">
                         <table>
                             <tr>
                                 <td id="tableheader" class="header">Team</td>
@@ -254,7 +271,7 @@ and open the template in the editor.
 
             <hr class="seperator">
             
-            <div class="table-responsive">
+            <div class="table-responsive" style="border: 0;">
             
             <table id="season_stats_table">
                 <caption id="season_stats"></caption>
@@ -541,13 +558,13 @@ and open the template in the editor.
             header.innerHTML = "Kevin Durant";
             
             var player_pic = document.getElementById('headshot');
-            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
-            player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
+            player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
+            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
             //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
             var logo = document.getElementById('logo');
-            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
-            logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
+            logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
+            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
+            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lal.png&w=110&h=110&transparent=true';
             
             var list = document.getElementById("team");
             list.innerHTML = 'Team: ' + data.team;
