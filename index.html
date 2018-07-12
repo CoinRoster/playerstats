@@ -16,11 +16,20 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <style>
-            #player_name{
-                font-size:2.2vw;
-                font-family: Arial;
-                font-weight: bold;
-                color: #00ff6a;
+            body{
+                background-color: rgb(35,36,38);
+            }
+            table{
+                width:100%;       
+            }
+            th, td {
+                padding: 4px; 
+                text-align: left;
+                background-color: #f2f2f2;
+                font-family: verdana;
+                font-size: 12px;
+                color: #c9dee0;
+                background-color: grey;  
             }
             caption{
                 font-size: 15px; 
@@ -30,25 +39,43 @@ and open the template in the editor.
                 background-color: #232426;
                 font-weight: bold;
             }
-            
+            #player_name{
+                font-size:2.2vw;
+                font-family: Arial;
+                font-weight: bold;
+                color: #00ff6a;
+            }
+            #tableinfo{
+                display: none;
+                border: 0;
+            }
+            #listinfo{
+                //white-space: nowrap;
+                font-size: 1.1vw;
+                text-align: left;
+                font-family: sans-serif;
+                color: #00ff6a;
+            }
             #picture{
                 position: relative;
                 overflow: hidden;
                 //margin-left: 50%; 
             }
-            #headshot2{
+            #headshot{
                 z-index: 2;
                 //position:absolute;
                 //top: 15px;
                 position: relative;
             }
-            #logo2{
+            #logo{
+                width: 100%;
+                height: 100%;
                 position: absolute;
                 top: 5px;
                 left: 5px;
                 z-index: 1;
             }
-            #spot2{
+            #spot{
                 width: 100%;
                 height: 100%;
                 opacity: 0.8;
@@ -65,26 +92,13 @@ and open the template in the editor.
                 font-weight: bold;
             }
             .header{
-                margin-bottom: 0%;
                 font-family: verdana;
                 color: #00ff6a;
                 background-color: #232426;
                 font-size: 15px;
                 font-weight: bold;
             }
-            table{
-                width:100%;
-            }
-            th, td {
-                padding: 4px; 
-                text-align: left;
-                background-color: #f2f2f2;
-                font-family: verdana;
-                font-size: 12px;
-                color: #c9dee0;
-                background-color: grey;
-                
-            }
+
             .modal {
                 display: none; /* Hidden by default */
                 position: absolute; /* Stay in place */
@@ -96,16 +110,14 @@ and open the template in the editor.
                 height: 100%; /* Full height */
                 overflow: auto; /* Enable scroll if needed */
                 background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */ 
-                
+                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */   
             }
-
             /* Modal Content */
             .modal-content {
                 background-color: rgb(55,56,57);//rgb(35,36,38);
                 margin: auto;
                 padding: 20px;
-                width: 55%;
+                width: 60%;
                 border: 10px solid #5ea600;//#aeff44;
                 border-radius: 15px;
             }
@@ -116,42 +128,47 @@ and open the template in the editor.
                 font-size: 25px;
                 font-weight: lighter;
             }
-
             .close:hover,
             .close:focus {
                 color: #000;
                 text-decoration: none;
                 cursor: pointer;
-            }   
-            div.example {
-              background-color: lightgrey;
-              padding: 20px;
-            }
-            #tableinfo{
-                display: none;
-            }
-            #infolist{
-                //white-space: nowrap;
-                font-size: 1vw;
-            }
-           
+            } 
+            
             @media screen and (max-width: 767px) {
+                caption{
+                    font-size: 4vw;
+                }
+                th,td{
+                    font-size: 3vw;
+                }
                 .modal{
-                    padding-top: 0px;
+                    padding-top: 20px;
                 }
                 .modal-content {
-                    width: 90vw;
+                    width: 90%;
                     border: 5px solid #5ea600;
                     //height: 100vh;
                 }
-                #picture{
-                    //display: none;
+                .container-fluid{
+                    padding: 0px;
+                    //display: flex;
+                    //align-items: center;
+                    //justify-content: center;
+                }
+                .header{
+                    font-size:4vw;
+                }
+                .seperator{
+                    width: 100%;
                 }
                 #opp{
                     font-size: 2vw;
                 }
                 #tableinfo{
                     display: inherit;
+                    border: transparent;
+                    border-radius: 10px;
                     //white-space: nowrap;
                 }    
                 #player_name{
@@ -159,515 +176,491 @@ and open the template in the editor.
                     text-align: center;
                     //overflow:  hidden;
                 }
-                #titledivider{
-                    width: 100%;
-                }
-                #infolist{
+
+                #listinfo{
                     font-size: 1.5vw;
                     font-weight: bold;
                     display: none;
                 }
-                caption{
-                    //padding: 4px;
-                    font-size: 3vw;
-                }
-                th,td{
-                    font-size: 3vw;
-                }
-                #tableheader{
-                    font-size:3vw;
-                }
-                .container-fluid{
-                    padding: 0px;
-                    
-                    //display: flex;
-                    //align-items: center;
-                    //justify-content: center;
-                }
                 #playerphoto{
                     margin-bottom: 5%;
-                    padding: 0px;
+                    //padding: 0px;
                 }
-                
+                #team2, #pos2, #height2, #weight2, #born2{
+                    font-size: 4vw;
+                }
+                #logo{
+                    left: -15vw;
+                }
             }
-        </style>
-        
-        
+        </style>  
     </head>
     
-    <body style="background-color: rgb(35,36,38);">
+    <body>
         <div id="myModal" class="modal">
               <!-- Modal content -->
              
             <div class="modal-content">
 
-            <span class="close">&times;</span>
-            
+                <span class="close">&times;</span>
+
                 <div class="container-fluid">
-                   
                     <div class="col-md-6 col-sm-6" style="padding: 0px;"></div>
                     <div class="col-md-6 col-sm-6" style="padding: 0px;">
-                    <h1 id="player_name" class="titlename"></h1> 
-                    
-                    <hr id="titledivider" class="seperator" >                
-                    
-                    </div> 
-                    
+                        <h1 id="player_name"></h1> 
+                        <hr class="seperator" >                
+                    </div>    
                 </div>
-            <div class="container-fluid">
-                
-                    <div id="playerphoto" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
-                        <div id="picture" class="picture">
-                            <div id="headshot2"  >                    
-                                <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
-                            </div>
-                            <div id="logo2">
-                                <img alt="logo" width="110" height="110" id="logo" class="img-responsive">
-                            </div>
-                            <div id="spot2">
-                                <img src="spotlight.png" alt="spot" width="230" height="175" id="spot" class="img-responsive">  
+
+                <div class="container-fluid">
+                        <div id="playerphoto" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
+                            <div id="picture">
+                                <div id="headshot">                    
+                                    <img alt="playerpic" width="219" height="160" id="headshot2" class="img-responsive">
+                                </div>
+                                <div id="logo">
+                                    <img alt="teamlogo" id="logo2" class="img-responsive">
+                                </div>
+                                <div id="spot">
+                                    <img src="spotlight.png" alt="spot" width="230" height="175" id="spot2" class="img-responsive">  
+                                </div>
                             </div>
                         </div>
-                    </div>
-            
-                
-                <div id="playerinfo" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
 
-                    <div id="infolist" style="text-align: left; font-family: sans-serif; color: #00ff6a;">                       
-                        <p id="team"></p>
-                        <p id="pos"></p>
-                        <p id="height"></p>
-                        <p id="weight"></p>
-                        <p id="born"></p>
-                    </div>
-                    
-                    <div id="tableinfo" class="table-responsive" style="border: 0;">
-                        <table>
-                            <tr>
-                                <td id="tableheader" class="header">Team</td>
-                                <td id="tableheader" class="header">Pos</td>
-                                <td id="tableheader" class="header">Height</td>
-                                <td id="tableheader" class="header">Weight</td>
-                            </tr>
-                            <tr>
-                                <td id="team2"></td>
-                                <td id="pos2"></td>
-                                <td id="height2"></td>
-                                <td id="weight2"></td>
-                            </tr>
-                            <tr>
-                                <td id="tableheader" class="header" colspan="4" style="text-align: center;">Born</td>
-                            </tr>
-                            <tr>
-                                <td id="born2" colspan="4" style="text-align: center;"></td>
-                            </tr>
-                        </table>
-                    </div>
-                    
+                        <div id="playerinfo" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
+                            <div id="listinfo">                       
+                                <p id="team"></p>
+                                <p id="pos"></p>
+                                <p id="height"></p>
+                                <p id="weight"></p>
+                                <p id="born"></p>
+                            </div>
+                            <div id="tableinfo" class="table-responsive">
+                                <table>
+                                    <tr>
+                                        <td class="header">Team</td>
+                                        <td class="header">Pos</td>
+                                        <td class="header">Height</td>
+                                        <td class="header">Weight</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="team2"></td>
+                                        <td id="pos2"></td>
+                                        <td id="height2"></td>
+                                        <td id="weight2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="header" colspan="4" style="text-align: center;">Born</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="born2" colspan="4" style="text-align: center;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>           
                 </div>
-                
-            </div>
-            
 
-            <hr class="seperator">
-            
-            <div class="table-responsive" style="border: 0;">
-            
-            <table id="season_stats_table">
-                <caption id="season_stats"></caption>
-            <tr class="category">
-            <td>cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            </tr>
-            <tr>   
-            <td>cell 8</td>
-            <td>cell 9</td>
-            <td>cell 10</td>
-            <td>cell 11</td>
-            <td>cell 12</td>
-            <td>cell 13</td>
-            <td>cell 14</td>
-            </tr>
-        </table>
-            
+                <hr class="seperator">
 
-            
-            <table id="career_stats_table">
-                <caption id="career_stats"></caption>
-            <tr class="category">
-            <td>cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            </tr>
-            
-            <tr>   
-            <td>cell 8</td>
-            <td>cell 9</td>
-            <td>cell 10</td>
-            <td>cell 11</td>
-            <td>cell 12</td>
-            <td>cell 13</td>
-            <td>cell 14</td>
-            </tr>
-        </table>
-           
-            
-            <table id="prev_games_table">
-                <caption id="prev_games"></caption>
-            <tr class="category">
-            <td>cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            </tr>
-            
-            <tr>
-            <td id="opp">cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            
-            </tr>
-            <tr>
-            <td id="opp">cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            
-            </tr>
-            <tr>
-            <td id="opp">cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            
-            </tr>
-            <tr>
-            <td id="opp">cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            
-            </tr>
-            <tr>
-            <td id="opp">cell 1</td>
-            <td>cell 2</td>
-            <td>cell 3</td>
-            <td>cell 4</td>
-            <td>cell 5</td>
-            <td>cell 6</td>
-            <td>cell 7</td>
-            <td>cell 8</td>
-            
-            </tr>
-        </table>
+                <div class="table-responsive" style="border: transparent;border-radius: 10px;">
+                    <table id="season_stats_table">
+                        <caption id="season_stats"></caption>
+                            <tr class="category">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>   
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+
+                    <table id="career_stats_table">
+                        <caption id="career_stats"></caption>
+                            <tr class="category">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>   
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+
+                    <table id="prev_games_table">
+                        <caption id="prev_games"></caption>
+                            <tr class="category">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td id="opp"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="opp"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="opp"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="opp"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="opp"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+                </div>
             </div>
-            
-        </div>
         </div>
         
         <!-- Trigger/Open The Modal -->
         <p id="link" class="header">Kevin Durant</p>
         
         <script>
-        var i;
-        var data = {
-  "last_five_games": [
-    {
-      "BLK": "0",
-      "AST": "7",
-      "SCORE": "W 110-102",
-      "FG%": ".652",
-      "3P%": ".667",
-      "STL": "1",
-      "OPP": "@ CLE",
-      "REB": "13",
-      "PTS": "43",
-      "DATE": "Wed 6/6",
-      "FGM-FGA": "15-23",
-      "MIN": "43",
-      "3PM-3PA": "6-9",
-      "FT%": "1.000",
-      "PF": "3",
-      "FTM-FTA": "7-7",
-      "TO": "3"
-    },
-    {
-      "BLK": "2",
-      "AST": "7",
-      "SCORE": "W 122-103",
-      "FG%": ".714",
-      "3P%": ".667",
-      "STL": "0",
-      "OPP": "vs CLE",
-      "REB": "9",
-      "PTS": "26",
-      "DATE": "Sun 6/3",
-      "FGM-FGA": "10-14",
-      "MIN": "38",
-      "3PM-3PA": "2-3",
-      "FT%": "1.000",
-      "PF": "3",
-      "FTM-FTA": "4-4",
-      "TO": "3"
-    },
-    {
-      "BLK": "3",
-      "AST": "6",
-      "SCORE": "W 124-114",
-      "FG%": ".364",
-      "3P%": ".143",
-      "STL": "1",
-      "OPP": "vs CLE",
-      "REB": "9",
-      "PTS": "26",
-      "DATE": "Thu 5/31",
-      "FGM-FGA": "8-22",
-      "MIN": "46",
-      "3PM-3PA": "1-7",
-      "FT%": ".900",
-      "PF": "3",
-      "FTM-FTA": "9-10",
-      "TO": "1"
-    },
-    {
-      "BLK": "3",
-      "AST": "5",
-      "SCORE": "W 101-92",
-      "FG%": ".524",
-      "3P%": ".455",
-      "STL": "1",
-      "OPP": "@ HOU",
-      "REB": "5",
-      "PTS": "34",
-      "DATE": "Mon 5/28",
-      "FGM-FGA": "11-21",
-      "MIN": "44",
-      "3PM-3PA": "5-11",
-      "FT%": ".700",
-      "PF": "3",
-      "FTM-FTA": "7-10",
-      "TO": "2"
-    },
-    {
-      "BLK": "1",
-      "AST": "4",
-      "SCORE": "W 115-86",
-      "FG%": ".353",
-      "3P%": ".200",
-      "STL": "0",
-      "OPP": "vs HOU",
-      "REB": "7",
-      "PTS": "23",
-      "DATE": "Sat 5/26",
-      "FGM-FGA": "6-17",
-      "MIN": "35",
-      "3PM-3PA": "1-5",
-      "FT%": ".714",
-      "PF": "0",
-      "FTM-FTA": "10-14",
-      "TO": "1"
-    }
-  ],
-  "pos": "SF",
-  "year_stats": {
-    "STAT_TYPE": "2017-18 Postseason",
-    "MPG": "38.5",
-    "FG%": ".490",
-    "PPG": "29.4",
-    "3P%": ".348",
-    "RPG": "7.6",
-    "PFPG": "2.0",
-    "GP": "20",
-    "FGM-FGA": "10.3-20.9",
-    "3PM-3PA": "2.4-6.8",
-    "TOPG": "2.4",
-    "FT%": ".897",
-    "FTM-FTA": "6.6-7.3",
-    "APG": "4.5",
-    "STLPG": "0.7",
-    "BLKPG": "1.1"
-  },
-  "career_stats": {
-    "STAT_TYPE": "Career",
-    "MPG": "37.1",
-    "FG%": ".490",
-    "PPG": "27.1",
-    "3P%": ".384",
-    "RPG": "7.1",
-    "PFPG": "1.9",
-    "GP": "771",
-    "FGM-FGA": "9.2-18.8",
-    "3PM-3PA": "1.9-4.8",
-    "TOPG": "3.1",
-    "FT%": ".882",
-    "FTM-FTA": "6.9-7.8",
-    "APG": "3.9",
-    "STLPG": "1.2",
-    "BLKPG": "1.1"
-  },
-  "Weight": "240 lbs",
-  "birthString": "Sep 29, 1988 in Washington, DC (Age: 29)",
-  "height": "6' 9\"",
-  "team": "GS",
-  "player_id": "3202"
-};       
-        // Get the modal
-        var modal = document.getElementById('myModal');
+            var i;
+            var data = {
+                "last_five_games": [
+                  {
+                    "BLK": "0",
+                    "AST": "7",
+                    "SCORE": "W 110-102",
+                    "FG%": ".652",
+                    "3P%": ".667",
+                    "STL": "1",
+                    "OPP": "@ CLE",
+                    "REB": "13",
+                    "PTS": "43",
+                    "DATE": "Wed 6/6",
+                    "FGM-FGA": "15-23",
+                    "MIN": "43",
+                    "3PM-3PA": "6-9",
+                    "FT%": "1.000",
+                    "PF": "3",
+                    "FTM-FTA": "7-7",
+                    "TO": "3"
+                  },
+                  {
+                    "BLK": "2",
+                    "AST": "7",
+                    "SCORE": "W 122-103",
+                    "FG%": ".714",
+                    "3P%": ".667",
+                    "STL": "0",
+                    "OPP": "vs CLE",
+                    "REB": "9",
+                    "PTS": "26",
+                    "DATE": "Sun 6/3",
+                    "FGM-FGA": "10-14",
+                    "MIN": "38",
+                    "3PM-3PA": "2-3",
+                    "FT%": "1.000",
+                    "PF": "3",
+                    "FTM-FTA": "4-4",
+                    "TO": "3"
+                  },
+                  {
+                    "BLK": "3",
+                    "AST": "6",
+                    "SCORE": "W 124-114",
+                    "FG%": ".364",
+                    "3P%": ".143",
+                    "STL": "1",
+                    "OPP": "vs CLE",
+                    "REB": "9",
+                    "PTS": "26",
+                    "DATE": "Thu 5/31",
+                    "FGM-FGA": "8-22",
+                    "MIN": "46",
+                    "3PM-3PA": "1-7",
+                    "FT%": ".900",
+                    "PF": "3",
+                    "FTM-FTA": "9-10",
+                    "TO": "1"
+                  },
+                  {
+                    "BLK": "3",
+                    "AST": "5",
+                    "SCORE": "W 101-92",
+                    "FG%": ".524",
+                    "3P%": ".455",
+                    "STL": "1",
+                    "OPP": "@ HOU",
+                    "REB": "5",
+                    "PTS": "34",
+                    "DATE": "Mon 5/28",
+                    "FGM-FGA": "11-21",
+                    "MIN": "44",
+                    "3PM-3PA": "5-11",
+                    "FT%": ".700",
+                    "PF": "3",
+                    "FTM-FTA": "7-10",
+                    "TO": "2"
+                  },
+                  {
+                    "BLK": "1",
+                    "AST": "4",
+                    "SCORE": "W 115-86",
+                    "FG%": ".353",
+                    "3P%": ".200",
+                    "STL": "0",
+                    "OPP": "vs HOU",
+                    "REB": "7",
+                    "PTS": "23",
+                    "DATE": "Sat 5/26",
+                    "FGM-FGA": "6-17",
+                    "MIN": "35",
+                    "3PM-3PA": "1-5",
+                    "FT%": ".714",
+                    "PF": "0",
+                    "FTM-FTA": "10-14",
+                    "TO": "1"
+                  }
+                ],
+                "pos": "SF",
+                "year_stats": {
+                  "STAT_TYPE": "2017-18 Postseason",
+                  "MPG": "38.5",
+                  "FG%": ".490",
+                  "PPG": "29.4",
+                  "3P%": ".348",
+                  "RPG": "7.6",
+                  "PFPG": "2.0",
+                  "GP": "20",
+                  "FGM-FGA": "10.3-20.9",
+                  "3PM-3PA": "2.4-6.8",
+                  "TOPG": "2.4",
+                  "FT%": ".897",
+                  "FTM-FTA": "6.6-7.3",
+                  "APG": "4.5",
+                  "STLPG": "0.7",
+                  "BLKPG": "1.1"
+                },
+                "career_stats": {
+                  "STAT_TYPE": "Career",
+                  "MPG": "37.1",
+                  "FG%": ".490",
+                  "PPG": "27.1",
+                  "3P%": ".384",
+                  "RPG": "7.1",
+                  "PFPG": "1.9",
+                  "GP": "771",
+                  "FGM-FGA": "9.2-18.8",
+                  "3PM-3PA": "1.9-4.8",
+                  "TOPG": "3.1",
+                  "FT%": ".882",
+                  "FTM-FTA": "6.9-7.8",
+                  "APG": "3.9",
+                  "STLPG": "1.2",
+                  "BLKPG": "1.1"
+                },
+                "Weight": "240 lbs",
+                "birthString": "Sep 29, 1988 in Washington, DC (Age: 29)",
+                "height": "6' 9\"",
+                "team": "GS",
+                "player_id": "3202"
+              };       
+            // Get the modal
+            var modal = document.getElementById('myModal');
 
-        // Get the button that opens the modal
-        var line = document.getElementById("link");
+            // Get the button that opens the modal
+            var line = document.getElementById("link");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal 
-        line.onclick = function() {
-            modal.style.display = "block";
+            // When the user clicks the button, open the modal 
+            line.onclick = function() {
+                modal.style.display = "block";
             
-            var header = document.getElementById("player_name");
-            header.innerHTML = "Kevin Durant";
-            
-            var player_pic = document.getElementById('headshot');
-            player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
-            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
-            //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
-            var logo = document.getElementById('logo');
-            logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
-            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-            //logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lal.png&w=110&h=110&transparent=true';
-            
-            var list = document.getElementById("team");
-            list.innerHTML = 'Team: ' + data.team;
-            var list = document.getElementById("pos");
-            list.innerHTML = 'Pos: ' + data.pos;
-            var list = document.getElementById("height");
-            list.innerHTML = 'Height: ' + data.height;
-            var list = document.getElementById("weight");
-            list.innerHTML = 'Weight: ' + data.Weight;
-            var list = document.getElementById("born");
-            list.innerHTML = 'Born: ' + data.birthString;
-            
-            var list2 = document.getElementById("team2");
-            list2.innerHTML = data.team;
-            var list2 = document.getElementById("pos2");
-            list2.innerHTML = data.pos;
-            var list2 = document.getElementById("height2");
-            list2.innerHTML = data.height;
-            var list2 = document.getElementById("weight2");
-            list2.innerHTML = data.Weight;
-            var list2 = document.getElementById("born2");
-            list2.innerHTML = data.birthString;
-            
-            
-            var season_stats = document.getElementById("season_stats");
-            season_stats.innerHTML = data.year_stats.STAT_TYPE;
+                function myFunction(x) {
+                    if (x.matches) { // If media query matches
+                        document.getElementById('playerphoto').setAttribute('align', 'center');
+                    }
+                    else {
+                        document.getElementById('playerphoto').setAttribute('align', 'auto');
+                    }
+                }
+                var x = window.matchMedia("(max-width: 767px)");
+                myFunction(x); // Call listener function at run time
+                x.addListener(myFunction); // Attach listener function on state changes
 
-            var sst = document.getElementById("season_stats_table").rows[0].cells;
-            sst[0].innerHTML = "MIN";
-            sst[1].innerHTML = "PTS";
-            sst[2].innerHTML = "REB";
-            sst[3].innerHTML = "AST";
-            sst[4].innerHTML = "BLK";
-            sst[5].innerHTML = "STL";
-            sst[6].innerHTML = "TO";
-            var sst = document.getElementById("season_stats_table").rows[1].cells;
-            sst[0].innerHTML = data.year_stats.MPG;
-            sst[1].innerHTML = data.year_stats.PPG;
-            sst[2].innerHTML = data.year_stats.RPG;
-            sst[3].innerHTML = data.year_stats.APG;
-            sst[4].innerHTML = data.year_stats.BLKPG;
-            sst[5].innerHTML = data.year_stats.STLPG;
-            sst[6].innerHTML = data.year_stats.TOPG;
-            
-            
-            var career_stats = document.getElementById("career_stats");
-            career_stats.innerHTML = "Career Stats";
 
-            var cst = document.getElementById("career_stats_table").rows[0].cells;
-            cst[0].innerHTML = "MIN";
-            cst[1].innerHTML = "PTS";
-            cst[2].innerHTML = "REB";
-            cst[3].innerHTML = "AST";
-            cst[4].innerHTML = "BLK";
-            cst[5].innerHTML = "STL";
-            cst[6].innerHTML = "TO";
-            var cst = document.getElementById("career_stats_table").rows[1].cells;
-            cst[0].innerHTML = data.career_stats.MPG;
-            cst[1].innerHTML = data.career_stats.PPG;
-            cst[2].innerHTML = data.career_stats.RPG;
-            cst[3].innerHTML = data.career_stats.APG;
-            cst[4].innerHTML = data.career_stats.BLKPG;
-            cst[5].innerHTML = data.career_stats.STLPG;
-            cst[6].innerHTML = data.career_stats.TOPG;
+                var header = document.getElementById("player_name");
+                header.innerHTML = "Kevin Durant";
+
+                var player_pic = document.getElementById('headshot2');
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
+                player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6450.png&w=350&h=254';
+                var team_logo = document.getElementById('logo2');
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
+                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png&w=110&h=110&transparent=true';
+
+                var list = document.getElementById("team");
+                list.innerHTML = 'Team: ' + data.team;
+                var list = document.getElementById("pos");
+                list.innerHTML = 'Pos: ' + data.pos;
+                var list = document.getElementById("height");
+                list.innerHTML = 'Height: ' + data.height;
+                var list = document.getElementById("weight");
+                list.innerHTML = 'Weight: ' + data.Weight;
+                var list = document.getElementById("born");
+                list.innerHTML = 'Born: ' + data.birthString;
+
+                var list2 = document.getElementById("team2");
+                list2.innerHTML = data.team;
+                var list2 = document.getElementById("pos2");
+                list2.innerHTML = data.pos;
+                var list2 = document.getElementById("height2");
+                list2.innerHTML = data.height;
+                var list2 = document.getElementById("weight2");
+                list2.innerHTML = data.Weight;
+                var list2 = document.getElementById("born2");
+                list2.innerHTML = data.birthString;
 
             
-            var prev_games = document.getElementById("prev_games");
-            prev_games.innerHTML = "Last Five Games";
-            
-            var pgt = document.getElementById("prev_games_table").rows[0].cells;
-            pgt[0].innerHTML = "Opp";
-            pgt[1].innerHTML = "MIN";
-            pgt[2].innerHTML = "PTS";
-            pgt[3].innerHTML = "REB";
-            pgt[4].innerHTML = "AST";
-            pgt[5].innerHTML = "BLK";
-            pgt[6].innerHTML = "STL";
-            pgt[7].innerHTML = "TO";                   
-            
-            for(var i = 1;i <= 5;i++){
-                var pgt = document.getElementById("prev_games_table").rows[i].cells;
-                pgt[0].innerHTML = data.last_five_games[i-1].OPP + "<br />" + data.last_five_games[i-1].SCORE;
-                pgt[1].innerHTML = data.last_five_games[i-1].MIN;
-                pgt[2].innerHTML = data.last_five_games[i-1].PTS;
-                pgt[3].innerHTML = data.last_five_games[i-1].REB;                  
-                pgt[4].innerHTML = data.last_five_games[i-1].AST;
-                pgt[5].innerHTML = data.last_five_games[i-1].BLK;
-                pgt[6].innerHTML = data.last_five_games[i-1].STL;
-                pgt[7].innerHTML = data.last_five_games[i-1].TO;
-                
-            }
-        };
+                var season_stats = document.getElementById("season_stats");
+                season_stats.innerHTML = data.year_stats.STAT_TYPE;
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        };
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
+                var sst = document.getElementById("season_stats_table").rows[0].cells;
+                sst[0].innerHTML = "MIN";
+                sst[1].innerHTML = "PTS";
+                sst[2].innerHTML = "REB";
+                sst[3].innerHTML = "AST";
+                sst[4].innerHTML = "BLK";
+                sst[5].innerHTML = "STL";
+                sst[6].innerHTML = "TO";
+                var sst = document.getElementById("season_stats_table").rows[1].cells;
+                sst[0].innerHTML = data.year_stats.MPG;
+                sst[1].innerHTML = data.year_stats.PPG;
+                sst[2].innerHTML = data.year_stats.RPG;
+                sst[3].innerHTML = data.year_stats.APG;
+                sst[4].innerHTML = data.year_stats.BLKPG;
+                sst[5].innerHTML = data.year_stats.STLPG;
+                sst[6].innerHTML = data.year_stats.TOPG;
+            
+            
+                var career_stats = document.getElementById("career_stats");
+                career_stats.innerHTML = "Career Stats";
+
+                var cst = document.getElementById("career_stats_table").rows[0].cells;
+                cst[0].innerHTML = "MIN";
+                cst[1].innerHTML = "PTS";
+                cst[2].innerHTML = "REB";
+                cst[3].innerHTML = "AST";
+                cst[4].innerHTML = "BLK";
+                cst[5].innerHTML = "STL";
+                cst[6].innerHTML = "TO";
+                var cst = document.getElementById("career_stats_table").rows[1].cells;
+                cst[0].innerHTML = data.career_stats.MPG;
+                cst[1].innerHTML = data.career_stats.PPG;
+                cst[2].innerHTML = data.career_stats.RPG;
+                cst[3].innerHTML = data.career_stats.APG;
+                cst[4].innerHTML = data.career_stats.BLKPG;
+                cst[5].innerHTML = data.career_stats.STLPG;
+                cst[6].innerHTML = data.career_stats.TOPG;
+
+            
+                var prev_games = document.getElementById("prev_games");
+                prev_games.innerHTML = "Last Five Games";
+
+                var pgt = document.getElementById("prev_games_table").rows[0].cells;
+                pgt[0].innerHTML = "Opp";
+                pgt[1].innerHTML = "MIN";
+                pgt[2].innerHTML = "PTS";
+                pgt[3].innerHTML = "REB";
+                pgt[4].innerHTML = "AST";
+                pgt[5].innerHTML = "BLK";
+                pgt[6].innerHTML = "STL";
+                pgt[7].innerHTML = "TO";                   
+            
+                for(var i = 1;i <= 5;i++){
+                    var pgt = document.getElementById("prev_games_table").rows[i].cells;
+                    pgt[0].innerHTML = data.last_five_games[i-1].OPP + "<br />" + data.last_five_games[i-1].SCORE;
+                    pgt[1].innerHTML = data.last_five_games[i-1].MIN;
+                    pgt[2].innerHTML = data.last_five_games[i-1].PTS;
+                    pgt[3].innerHTML = data.last_five_games[i-1].REB;                  
+                    pgt[4].innerHTML = data.last_five_games[i-1].AST;
+                    pgt[5].innerHTML = data.last_five_games[i-1].BLK;
+                    pgt[6].innerHTML = data.last_five_games[i-1].STL;
+                    pgt[7].innerHTML = data.last_five_games[i-1].TO;
+
+                }
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
                 modal.style.display = "none";
-            }
-        };
+            };
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
         </script>               
     </body>
 </html>
