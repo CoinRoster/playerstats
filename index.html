@@ -42,6 +42,13 @@ and open the template in the editor.
                 background-color: #232426;
                 font-weight: bold;
             }
+            #link{
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-size: 15px;
+                font-weight: bold; 
+            }
             #player_name{
                 font-size:2.2vw;
                 font-family: Arial;
@@ -106,7 +113,7 @@ and open the template in the editor.
                 display: none; /* Hidden by default */
                 position: absolute; /* Stay in place */
                 z-index: 1; /* Sit on top */
-                padding-top: 70px; /* Location of the box */
+                padding-top: 60px; /* Location of the box */
                 left: 0;
                 top: 0;
                 width: 100%; /* Full width */
@@ -125,7 +132,7 @@ and open the template in the editor.
                 border: 10px solid #5ea600;//#aeff44;
                 border-radius: 15px;
                 max-height: 500px;
-                overflow: scroll;
+                overflow: auto;
             }
             /* The Close Button */
             .close {
@@ -164,6 +171,7 @@ and open the template in the editor.
                 }
                 .header{
                     font-size:4vw;
+                    text-align: center;
                 }
                 .seperator{
                     width: 100%;
@@ -194,10 +202,31 @@ and open the template in the editor.
                 }
                 #team2, #pos2, #height2, #weight2, #born2{
                     font-size: 4vw;
+                    text-align: center;
                 }
                 #logo{
                     left: -12vw;
                 }
+            }
+            @media screen and (max-width: 767px) and (min-width: 576px) {
+                th,td{
+                    font-size: 2vw;
+                }
+                #team2, #pos2, #height2, #weight2, #born2{
+                    font-size: 2vw;
+                    text-align: center;
+                }
+                .header{
+                    font-size:2vw;
+                    text-align: center;
+                }
+                caption{
+                    font-size: 2vw;
+                }
+                #player_name{
+                    font-size: 5vw;
+                }
+                
             }
         </style>  
     </head>
@@ -382,7 +411,7 @@ and open the template in the editor.
         </div>
         
         <!-- Trigger/Open The Modal -->
-        <p id="link" class="header">Kevin Durant</p>
+        <p id="link" style="font-size: 14px;">Kevin Durant</p>
         
         <script>
             var i;
