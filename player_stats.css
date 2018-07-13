@@ -94,7 +94,7 @@ and open the template in the editor.
             .stat_category{
                 font-weight: bold;
             }
-            .header{
+            .table_header{
                 font-family: verdana;
                 color: #00ff6a;
                 background-color: #232426;
@@ -162,7 +162,7 @@ and open the template in the editor.
                     //align-items: center;
                     //justify-content: center;
                 }
-                .header{
+                .table_header{
                     font-size:4vw;
                     text-align: center;
                 }
@@ -209,7 +209,7 @@ and open the template in the editor.
                     font-size: 2vw;
                     text-align: center;
                 }
-                .header{
+                .table_header{
                     font-size:2vw;
                     text-align: center;
                 }
