@@ -141,16 +141,16 @@
                 "player_id": "3202"
               };       
             // Get the modal
-            var modal = document.getElementById('myModal');
+            var modal = document.getElementById('stats_modal');
 
             // Get the button that opens the modal
-            var line = document.getElementById("link");
+            var link = document.getElementById("link");
 
             // Get the <span> element that closes the modal
             var span = document.getElementsByClassName("close")[0];
 
             // When the user clicks the button, open the modal 
-            line.onclick = function() {
+            link.onclick = function() {
                 modal.style.display = "block";
             
                 function myFunction(x) {
@@ -169,35 +169,35 @@
                 var header = document.getElementById("player_name");
                 header.innerHTML = "Kevin Durant";
 
-                var player_pic = document.getElementById('headshot2');
+                var player_pic = document.getElementById('headshot');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6450.png&w=350&h=254';
-                var team_logo = document.getElementById('logo2');
+                var team_logo = document.getElementById('logo');
                 //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
                 //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png&w=110&h=110&transparent=true';
 
-                var list = document.getElementById("team");
+                var list = document.getElementById("team_list");
                 list.innerHTML = 'Team: ' + data.team;
-                var list = document.getElementById("pos");
+                var list = document.getElementById("pos_list");
                 list.innerHTML = 'Pos: ' + data.pos;
-                var list = document.getElementById("height");
+                var list = document.getElementById("height_list");
                 list.innerHTML = 'Height: ' + data.height;
-                var list = document.getElementById("weight");
+                var list = document.getElementById("weight_list");
                 list.innerHTML = 'Weight: ' + data.Weight;
-                var list = document.getElementById("born");
+                var list = document.getElementById("born_list");
                 list.innerHTML = 'Born: ' + data.birthString;
 
-                var list2 = document.getElementById("team2");
+                var list2 = document.getElementById("team_table");
                 list2.innerHTML = data.team;
-                var list2 = document.getElementById("pos2");
+                var list2 = document.getElementById("pos_table");
                 list2.innerHTML = data.pos;
-                var list2 = document.getElementById("height2");
+                var list2 = document.getElementById("height_table");
                 list2.innerHTML = data.height;
-                var list2 = document.getElementById("weight2");
+                var list2 = document.getElementById("weight_table");
                 list2.innerHTML = data.Weight;
-                var list2 = document.getElementById("born2");
+                var list2 = document.getElementById("born_table");
                 list2.innerHTML = data.birthString;
 
             

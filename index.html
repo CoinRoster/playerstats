@@ -16,14 +16,14 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="player_stats stylesheet" href="player_stats.css">
         
-        <script src="player_stats.js"></script>        
+             
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     </head>
     
     <body>  
-        <div id="myModal" class="modal">
+        <div id="stats_modal" class="modal">
               <!-- Modal content -->
              
             <div class="modal-content">
@@ -40,26 +40,26 @@ and open the template in the editor.
 
                 <div class="container-fluid">
                         <div id="playerphoto" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
-                            <div id="picture">
-                                <div id="headshot">                    
-                                    <img alt="playerpic" width="219" height="160" id="headshot2" class="img-responsive">
+                            <div id="frame">
+                                <div id="headshot_frame">                    
+                                    <img alt="playerpic" width="219" height="160" id="headshot" class="img-responsive">
                                 </div>
-                                <div id="logo">
-                                    <img alt="teamlogo" id="logo2" class="img-responsive">
+                                <div id="logo_frame">
+                                    <img alt="teamlogo" id="logo" class="img-responsive">
                                 </div>
-                                <div id="spot">
-                                    <img src="spotlight.png" alt="spot" width="230" height="175" id="spot2" class="img-responsive">  
+                                <div id="spot_frame">
+                                    <img src="spotlight.png" alt="spot" width="230" height="175" id="spot" class="img-responsive">  
                                 </div>
                             </div>
                         </div>
 
                         <div id="playerinfo" class="col-md-6 col-sm-6 col-xs-12" style="padding: 0px;">
                             <div id="listinfo">                       
-                                <p id="team"></p>
-                                <p id="pos"></p>
-                                <p id="height"></p>
-                                <p id="weight"></p>
-                                <p id="born"></p>
+                                <p id="team_list"></p>
+                                <p id="pos_list"></p>
+                                <p id="height_list"></p>
+                                <p id="weight_list"></p>
+                                <p id="born_list"></p>
                             </div>
                             <div id="tableinfo" class="table-responsive">
                                 <table>
@@ -70,16 +70,16 @@ and open the template in the editor.
                                         <td class="header">Weight</td>
                                     </tr>
                                     <tr>
-                                        <td id="team2"></td>
-                                        <td id="pos2"></td>
-                                        <td id="height2"></td>
-                                        <td id="weight2"></td>
+                                        <td id="team_table"></td>
+                                        <td id="pos_table"></td>
+                                        <td id="height_table"></td>
+                                        <td id="weight_table"></td>
                                     </tr>
                                     <tr>
                                         <td class="header" colspan="4" style="text-align: center;">Born</td>
                                     </tr>
                                     <tr>
-                                        <td id="born2" colspan="4" style="text-align: center;"></td>
+                                        <td id="born_table" colspan="4" style="text-align: center;"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -91,7 +91,7 @@ and open the template in the editor.
                 <div class="table-responsive" style="border: transparent;border-radius: 10px;">
                     <table id="season_stats_table">
                         <caption id="season_stats"></caption>
-                            <tr class="category">
+                            <tr class="stat_category">
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -113,7 +113,7 @@ and open the template in the editor.
 
                     <table id="career_stats_table">
                         <caption id="career_stats"></caption>
-                            <tr class="category">
+                            <tr class="stat_category">
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -135,7 +135,7 @@ and open the template in the editor.
 
                     <table id="prev_games_table">
                         <caption id="prev_games"></caption>
-                            <tr class="category">
+                            <tr class="stat_category">
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -147,7 +147,7 @@ and open the template in the editor.
                             </tr>
 
                             <tr>
-                                <td id="opp"></td>
+                                <td id="opponent"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -157,7 +157,7 @@ and open the template in the editor.
                                 <td></td>
                             </tr>
                             <tr>
-                                <td id="opp"></td>
+                                <td id="opponent"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -167,7 +167,7 @@ and open the template in the editor.
                                 <td></td>
                             </tr>
                             <tr>
-                                <td id="opp"></td>
+                                <td id="opponent"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -177,7 +177,7 @@ and open the template in the editor.
                                 <td></td>
                             </tr>
                             <tr>
-                                <td id="opp"></td>
+                                <td id="opponent"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -187,7 +187,7 @@ and open the template in the editor.
                                 <td></td>
                             </tr>
                             <tr>
-                                <td id="opp"></td>
+                                <td id="opponent"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -204,4 +204,7 @@ and open the template in the editor.
         <!-- Trigger/Open The Modal -->
         <p id="link" style="font-size: 14px;">Kevin Durant</p>                   
     </body>
+    
+    <script src="player_stats.js"></script>   
+
 </html>
