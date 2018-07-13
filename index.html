@@ -209,7 +209,7 @@ and open the template in the editor.
                     left: -12vw;
                 }
             }
-            @media screen and (max-width: 767px) and (min-width: 576px) {
+            @media screen and (max-width: 767px) and (min-width: 415px) {
                 th,td{
                     font-size: 2vw;
                 }
@@ -584,16 +584,16 @@ and open the template in the editor.
 
 
                 var header = document.getElementById("player_name");
-                header.innerHTML = "Kawhi Leonard";
+                header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot2');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
-                player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6450.png&w=350&h=254';
+                player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6450.png&w=350&h=254';
                 var team_logo = document.getElementById('logo2');
                 //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png&w=110&h=110&transparent=true';
+                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png&w=110&h=110&transparent=true';
 
                 var list = document.getElementById("team");
                 list.innerHTML = 'Team: ' + data.team;
