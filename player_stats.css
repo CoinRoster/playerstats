@@ -1,0 +1,226 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Jul-2018, 2:49:53 PM
+    Author     : G-UNIT
+*/
+
+            ::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+            }
+            body{
+                background-color: rgb(35,36,38);
+            }
+            table{
+                width:100%;       
+            }
+            th, td {
+                padding: 4px; 
+                text-align: left;
+                background-color: #f2f2f2;
+                font-family: verdana;
+                font-size: 12px;
+                color: #c9dee0;
+                background-color: grey;  
+            }
+            caption{
+                padding-left: 5px;
+                font-size: 15px; 
+                margin-bottom: 0%;
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-weight: bold;
+            }
+            #link{
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-size: 15px;
+                font-weight: bold; 
+            }
+            #player_name{
+                font-size:2.2vw;
+                font-family: Arial;
+                font-weight: bold;
+                color: #00ff6a;
+            }
+            #tableinfo{
+                display: none;
+                border: 0;
+            }
+            #listinfo{
+                //white-space: nowrap;
+                font-size: 1.1vw;
+                text-align: left;
+                font-family: sans-serif;
+                color: #00ff6a;
+            }
+            #picture{
+                position: relative;
+                overflow: hidden;
+                //margin-left: 50%; 
+            }
+            #headshot{
+                z-index: 2;
+                //position:absolute;
+                //top: 15px;
+                position: relative;
+            }
+            #logo{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 5px;
+                left: 1vw;
+                z-index: 1;
+            }
+            #spot{
+                width: 100%;
+                height: 100%;
+                opacity: 0.8;
+                position:absolute;
+                top: -2%;   
+            }
+            .seperator{
+                width: 100%;
+                //margin-left: 0.5%;
+                margin-top: -1%;
+                opacity: .3;
+            }
+            .category{
+                font-weight: bold;
+            }
+            .header{
+                font-family: verdana;
+                color: #00ff6a;
+                background-color: #232426;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: absolute; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 60px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                //overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.3); /* Black w/ opacity */ 
+                
+            }
+            /* Modal Content */
+            .modal-content {
+                background-color: rgb(55,56,57);//rgb(35,36,38);
+                margin: auto;
+                padding: 20px;
+                width: 60%;
+                border: 10px solid #5ea600;//#aeff44;
+                border-radius: 15px;
+                max-height: 500px;
+                overflow: scroll;
+            }
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 25px;
+                font-weight: lighter;
+            }
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            } 
+            
+            @media screen and (max-width: 767px) {
+                caption{
+                    font-size: 4vw;
+                    padding-left: 5px;
+                }
+                th,td{
+                    font-size: 3vw;
+                }
+                .modal{
+                    padding-top: 20px;
+                }
+                .modal-content {
+                    width: 90%;
+                    border: 5px solid #5ea600;
+                    //height: 100vh;
+                }
+                .container-fluid{
+                    padding: 0px;
+                    //display: flex;
+                    //align-items: center;
+                    //justify-content: center;
+                }
+                .header{
+                    font-size:4vw;
+                    text-align: center;
+                }
+                .seperator{
+                    width: 100%;
+                }
+                #opp{
+                    font-size: 2vw;
+                }
+                #tableinfo{
+                    display: inherit;
+                    border: transparent;
+                    border-radius: 10px;
+                    //white-space: nowrap;
+                }    
+                #player_name{
+                    font-size: 8vw;
+                    text-align: center;
+                    //overflow:  hidden;
+                }
+
+                #listinfo{
+                    font-size: 1.5vw;
+                    font-weight: bold;
+                    display: none;
+                }
+                #playerphoto{
+                    margin-bottom: 5%;
+                    //padding: 0px;
+                }
+                #team2, #pos2, #height2, #weight2, #born2{
+                    font-size: 4vw;
+                    text-align: center;
+                }
+                #logo{
+                    left: -12vw;
+                }
+            }
+            @media screen and (max-width: 767px) and (min-width: 415px) {
+                th,td{
+                    font-size: 2vw;
+                }
+                #team2, #pos2, #height2, #weight2, #born2{
+                    font-size: 2vw;
+                    text-align: center;
+                }
+                .header{
+                    font-size:2vw;
+                    text-align: center;
+                }
+                caption{
+                    font-size: 2vw;
+                    padding-left: 5px;
+                }
+                #player_name{
+                    font-size: 5vw;
+                }
+                
+            }
