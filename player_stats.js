@@ -172,33 +172,33 @@
                 var player_pic = document.getElementById('headshot');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6450.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');
                 //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
 
-                var list = document.getElementById("team_list");
-                list.innerHTML = 'Team: ' + data.team;
-                var list = document.getElementById("pos_list");
-                list.innerHTML = 'Pos: ' + data.pos;
-                var list = document.getElementById("height_list");
-                list.innerHTML = 'Height: ' + data.height;
-                var list = document.getElementById("weight_list");
-                list.innerHTML = 'Weight: ' + data.Weight;
-                var list = document.getElementById("born_list");
-                list.innerHTML = 'Born: ' + data.birthString;
+                var list_info = document.getElementById("team_list");
+                list_info.innerHTML = 'Team: ' + data.team;
+                var list_info = document.getElementById("pos_list");
+                list_info.innerHTML = 'Pos: ' + data.pos;
+                var list_info = document.getElementById("height_list");
+                list_info.innerHTML = 'Height: ' + data.height;
+                var list_info = document.getElementById("weight_list");
+                list_info.innerHTML = 'Weight: ' + data.Weight;
+                var list_info = document.getElementById("born_list");
+                list_info.innerHTML = 'Born: ' + data.birthString;
 
-                var list2 = document.getElementById("team_table");
-                list2.innerHTML = data.team;
-                var list2 = document.getElementById("pos_table");
-                list2.innerHTML = data.pos;
-                var list2 = document.getElementById("height_table");
-                list2.innerHTML = data.height;
-                var list2 = document.getElementById("weight_table");
-                list2.innerHTML = data.Weight;
-                var list2 = document.getElementById("born_table");
-                list2.innerHTML = data.birthString;
+                var table_info = document.getElementById("team_table");
+                table_info.innerHTML = data.team;
+                var table_info = document.getElementById("pos_table");
+                table_info.innerHTML = data.pos;
+                var table_info = document.getElementById("height_table");
+                table_info.innerHTML = data.height;
+                var table_info = document.getElementById("weight_table");
+                table_info.innerHTML = data.Weight;
+                var table_info = document.getElementById("born_table");
+                table_info.innerHTML = data.birthString;
 
             
                 var season_stats = document.getElementById("season_stats");
