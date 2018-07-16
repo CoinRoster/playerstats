@@ -170,13 +170,13 @@
                 header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot');
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/13934.png&w=350&h=254';
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png&w=110&h=110&transparent=true';
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mil.png&w=110&h=110&transparent=true';
 
                 var list_info = document.getElementById("team_list");
                 list_info.innerHTML = 'Team: ' + data.team;
