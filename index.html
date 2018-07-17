@@ -27,14 +27,13 @@ and open the template in the editor.
               <!-- Modal content -->
              
             <div class="modal-content">
-
+                <div class="modal-body">
                 <span class="close">&times;</span>
-
                 <div class="container-fluid">
                     <div class="col-md-6 col-sm-6" style="padding: 0px;"></div>
-                    <div class="col-md-6 col-sm-6" style="padding: 0px;">
-                        <h1 id="player_name"></h1> 
-                        <hr class="seperator" >                
+                    <div class="col-md-6 col-sm-6" style="padding: 0px;">                                 
+                        <h1 id="player_name"></h1>    
+                        <hr class="seperator">                                       
                     </div>    
                 </div>
 
@@ -88,7 +87,7 @@ and open the template in the editor.
 
                 <hr class="seperator">
 
-                <div class="table-responsive" style="border: transparent;border-radius: 10px;">
+                <div id="table" class="table-responsive" style="border: transparent;border-radius: 10px;">
                     <table id="season_stats_table">
                         <caption id="season_stats"></caption>
                             <tr class="stat_category">
@@ -199,10 +198,17 @@ and open the template in the editor.
                     </table>
                 </div>
             </div>
+                <div id="footer">                    
+                    <button id="draft_button">DRAFT</button>
+                </div>
+            </div>
+                
         </div>
         
         <!-- Trigger/Open The Modal -->
-        <p id="link" style="font-size: 14px;">Kevin Durant</p>                   
+        <p id="link" style="font-size: 14px;">Kevin Durant</p>  
+
+                
     </body>
     
     <script src="player_stats.js"></script>   

@@ -6,9 +6,31 @@ and open the template in the editor.
 /* 
     Created on : 13-Jul-2018, 2:49:53 PM
 */
+            .modal-body{
+                max-height: 410px;
+                overflow: scroll;
+                padding: 0px;
+            }
+            #footer{
+                padding: 0px;
+                position: relative;
+            }
+            #draft_button{
+                margin-top: 2vh;
+                margin-bottom: -1vh;
+                float: right;
+                padding: 8px;
+                border:0;
+                border-radius: 5px;
+                background-color: orange;
+                color: white;
+                font-size: 1.2vw; 
+                font-family: sans-serif;
+                font-weight: bold;
+            }
             ::-webkit-scrollbar {
                 width: 0px;
-                height: 0px;
+                height: 0px;               
             }
             body{
                 background-color: rgb(35,36,38);
@@ -29,8 +51,8 @@ and open the template in the editor.
                 padding-left: 5px;
                 font-size: 15px; 
                 margin-bottom: 0%;
-                font-family: verdana;
-                color: #00ff6a;
+                font-family: sans-serif;//verdana;
+                color: white;//#00ff6a;
                 background-color: #232426;
                 font-weight: bold;
             }
@@ -43,34 +65,30 @@ and open the template in the editor.
             }
             #player_name{
                 font-size:2.2vw;
-                font-family: Arial;
-                //font-weight: bold;
-                color: #00ff6a;
+                font-family: sans-serif;//Arial;
+                color: white;//#00ff6a;
+                white-space: nowrap;
             }
             #tableinfo{
                 display: none;
                 border: 0;
             }
             #listinfo{
-                //white-space: nowrap;
                 font-size: 1.1vw;
                 text-align: left;
                 font-family: sans-serif;
-                color: #00ff6a;
+                color: white;//#00ff6a;
             }
             #frame{
                 position: relative;
                 overflow: hidden;
-                //margin-left: 50%; 
             }
             #headshot_frame{
                 z-index: 2;
-                //position:absolute;
-                //top: 15px;
                 position: relative;
             }
             #logo_frame{
-                opacity: 0.5;
+                opacity: 0.7;
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -81,21 +99,22 @@ and open the template in the editor.
             #spot_frame{
                 width: 100%;
                 height: 100%;
-                opacity: 0.8;
+                opacity: 0.9;
                 position:absolute;
                 top: -2%;   
             }
             .seperator{
                 width: 100%;
-                //margin-left: 0.5%;
-                margin-top: -1%;
+                //padding-top: 5px;
+                margin-top: 0%;
                 opacity: .3;
+                //color: orange;
             }
             .stat_category{
                 font-weight: bold;
             }
             .table_header{
-                font-family: verdana;
+                font-family: sans-serif;//verdana;
                 color: #00ff6a;
                 background-color: #232426;
                 font-size: 15px;
@@ -121,10 +140,10 @@ and open the template in the editor.
                 margin: auto;
                 padding: 20px;
                 width: 60%;
-                border: 10px solid #5ea600;//#aeff44;
+                border: 5px solid rgb(220,222,224);//#5ea600;
                 border-radius: 15px;
-                max-height: 500px;
-                overflow: scroll;
+                max-height: 510px;
+                overflow: auto; 
             }
             /* The Close Button */
             .close {
@@ -153,7 +172,7 @@ and open the template in the editor.
                 }
                 .modal-content {
                     width: 90%;
-                    border: 5px solid #5ea600;
+                    border: 5px solid white;//#5ea600;
                     //height: 100vh;
                 }
                 .container-fluid{
@@ -165,9 +184,13 @@ and open the template in the editor.
                 .table_header{
                     font-size:4vw;
                     text-align: center;
+                    color: white;
                 }
                 .seperator{
                     width: 100%;
+                }
+                #draft_button{
+                    font-size: 3vw;
                 }
                 #opponent{
                     font-size: 2vw;
@@ -208,6 +231,9 @@ and open the template in the editor.
                 #team_table, #pos_table, #height_table, #weight_table, #born_table{
                     font-size: 2vw;
                     text-align: center;
+                }
+                #draft_button{
+                    font-size: 2vw;
                 }
                 .table_header{
                     font-size:2vw;

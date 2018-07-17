@@ -152,7 +152,7 @@
             // When the user clicks the button, open the modal 
             link.onclick = function() {
                 modal.style.display = "block";
-            
+                               
                 function myFunction(x) {
                     if (x.matches) { // If media query matches
                         document.getElementById('playerphoto').setAttribute('align', 'center');
@@ -167,16 +167,24 @@
 
 
                 var header = document.getElementById("player_name");
-                header.innerHTML = "Kevin Durant";
+                
+                if (header.innerHTML.includes("Kevin Durant") == false){
+                    header.innerHTML += "Kevin Durant";
+                }
+                else{
+                    header.innerHTML += "";
+                }
 
                 var player_pic = document.getElementById('headshot');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/13934.png&w=350&h=254';
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/golf/players/full/4848.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');
                 //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png&w=110&h=110&transparent=true';
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mil.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
+                //team_logo.src = 'http://a.espncdn.com/golfonline/img/flags/usa.jpg';
 
                 var list_info = document.getElementById("team_list");
                 list_info.innerHTML = 'Team: ' + data.team;
