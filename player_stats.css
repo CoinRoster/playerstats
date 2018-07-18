@@ -17,10 +17,13 @@ and open the template in the editor.
                 font-family: sans-serif;
                 font-weight: bold;
             }
+            #mobile_header{
+                display: none;
+            }
             #stats_table{
                 border: transparent;
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
+                border-radius: 10px;
+                border-top-left-radius: 0px;
             }
             #tweets{
                 display: none;
@@ -76,7 +79,8 @@ and open the template in the editor.
                 font-weight: bold;
             }
             p{
-               margin-bottom: 3vh;
+                //margin-top: 0%;
+                margin-bottom: 0%;
             }
             #link{
                 font-family: verdana;
@@ -85,8 +89,8 @@ and open the template in the editor.
                 font-size: 15px;
                 font-weight: bold; 
             }
-            #player_name{
-                font-size:2.2vw;
+            #player_name, #player_name2{
+                font-size: 2.2vw;
                 font-family: sans-serif;//Arial;
                 color: white;//#00ff6a;
                 white-space: nowrap;
@@ -124,6 +128,9 @@ and open the template in the editor.
                 opacity: 0.9;
                 position:absolute;
                 top: -2%;   
+            }
+            #underline{
+                margin-bottom: 2%;
             }
             .seperator{
                 width: 100%;
@@ -182,6 +189,16 @@ and open the template in the editor.
             } 
             
             @media screen and (max-width: 767px) {
+                #md_header{
+                    display: none;
+                }
+                #mobile_header{
+                    display: inline;
+                }
+                #player_name2{
+                    font-size: 8vw;
+                    text-align: center;
+                }
                 caption{
                     font-size: 4vw;
                     padding-left: 5px;
@@ -273,6 +290,9 @@ and open the template in the editor.
                 }
                 #player_name{
                     font-size: 5vw;
+                }
+                #player_name2{
+                    font-size: 5vw;    
                 }
                 
             }

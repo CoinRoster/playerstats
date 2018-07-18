@@ -182,6 +182,8 @@
 
                 var header = document.getElementById("player_name");
                 header.innerHTML = "Kevin Durant";
+                var header = document.getElementById("player_name2");
+                header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/13934.png&w=350&h=254';
