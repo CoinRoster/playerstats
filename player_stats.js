@@ -152,7 +152,21 @@
             // When the user clicks the button, open the modal 
             link.onclick = function() {
                 modal.style.display = "block";
-                               
+                
+                var tweet_button = document.getElementById("tweets_tab");
+                var stats_button = document.getElementById("stats_tab");
+                var tweets_tab = document.getElementById("tweets");
+                var stats_tab = document.getElementById("stats_table");
+                
+                tweet_button.onclick = function() {
+                   tweets_tab.style.display = "block";
+                   stats_tab.style.display = "none";
+                };
+                stats_button.onclick = function() {
+                   tweets_tab.style.display = "none";
+                   stats_tab.style.display = "block";
+                };
+                
                 function myFunction(x) {
                     if (x.matches) { // If media query matches
                         document.getElementById('playerphoto').setAttribute('align', 'center');
@@ -167,13 +181,7 @@
 
 
                 var header = document.getElementById("player_name");
-                
-                if (header.innerHTML.includes("Kevin Durant") == false){
-                    header.innerHTML += "Kevin Durant";
-                }
-                else{
-                    header.innerHTML += "";
-                }
+                header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot');
                 //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/13934.png&w=350&h=254';
@@ -191,9 +199,9 @@
                 var list_info = document.getElementById("pos_list");
                 list_info.innerHTML = 'Pos: ' + data.pos;
                 var list_info = document.getElementById("height_list");
-                list_info.innerHTML = 'Height: ' + data.height;
-                var list_info = document.getElementById("weight_list");
-                list_info.innerHTML = 'Weight: ' + data.Weight;
+                list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.Weight;
+                //var list_info = document.getElementById("weight_list");
+                //list_info.innerHTML = 'Weight: ' + data.Weight;
                 var list_info = document.getElementById("born_list");
                 list_info.innerHTML = 'Born: ' + data.birthString;
 

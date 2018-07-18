@@ -6,6 +6,25 @@ and open the template in the editor.
 /* 
     Created on : 13-Jul-2018, 2:49:53 PM
 */
+            .tab{
+                border: 1px solid white;
+                border-bottom: transparent;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                background-color: #232426;
+                color: white;
+                font-size: 1.2vw; 
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            #stats_table{
+                border: transparent;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            #tweets{
+                display: none;
+            }
             .modal-body{
                 max-height: 410px;
                 overflow: scroll;
@@ -22,7 +41,7 @@ and open the template in the editor.
                 padding: 8px;
                 border:0;
                 border-radius: 5px;
-                background-color: orange;
+                background-color: #00ff6a;
                 color: white;
                 font-size: 1.2vw; 
                 font-family: sans-serif;
@@ -55,6 +74,9 @@ and open the template in the editor.
                 color: white;//#00ff6a;
                 background-color: #232426;
                 font-weight: bold;
+            }
+            p{
+               margin-bottom: 3vh;
             }
             #link{
                 font-family: verdana;
@@ -189,6 +211,9 @@ and open the template in the editor.
                 .seperator{
                     width: 100%;
                 }
+                .tab{
+                    font-size: 3vw;
+                }
                 #draft_button{
                     font-size: 3vw;
                 }
@@ -233,6 +258,9 @@ and open the template in the editor.
                     text-align: center;
                 }
                 #draft_button{
+                    font-size: 2vw;
+                }
+                .tab{
                     font-size: 2vw;
                 }
                 .table_header{
