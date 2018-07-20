@@ -153,17 +153,17 @@
             link.onclick = function() {
                 modal.style.display = "block";
                 
-                var tweet_button = document.getElementById("tweets_tab");
+                var news_button = document.getElementById("news_tab");
                 var stats_button = document.getElementById("stats_tab");
-                var tweets_tab = document.getElementById("tweets");
+                var news_tab = document.getElementById("newsfeed");
                 var stats_tab = document.getElementById("stats_table");
                 
-                tweet_button.onclick = function() {
-                   tweets_tab.style.display = "block";
+                news_button.onclick = function() {
+                   news_tab.style.display = "block";
                    stats_tab.style.display = "none";
                 };
                 stats_button.onclick = function() {
-                   tweets_tab.style.display = "none";
+                   news_tab.style.display = "none";
                    stats_tab.style.display = "block";
                 };
                 
@@ -182,7 +182,7 @@
 
                 var header = document.getElementById("player_name");
                 header.innerHTML = "Kevin Durant";
-                var header = document.getElementById("player_name2");
+                var header = document.getElementById("mobile_playername");
                 header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot');
