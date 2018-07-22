@@ -191,7 +191,7 @@ and open the template in the editor.
             } 
             
             @media screen and (max-width: 767px) {
-                #md_header{
+                #header{
                     display: none;
                 }
                 #mobile_header{
