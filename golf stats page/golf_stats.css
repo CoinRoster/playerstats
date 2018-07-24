@@ -18,6 +18,9 @@ and open the template in the editor.
                 font-family: sans-serif;
                 font-weight: bold;
             }
+            #playerphoto{
+                margin-top: 2%;
+            }
             #mobile_header{
                 display: none;
             }
@@ -68,7 +71,8 @@ and open the template in the editor.
                 background-color: #f2f2f2;
                 font-family: verdana;
                 font-size: 12px;
-                color: #c9dee0;
+                font-weight: bold;
+                color: rgb(55,56,57);//#c9dee0;
                 background-color: grey;  
             }
             caption{
@@ -110,6 +114,7 @@ and open the template in the editor.
             #frame{
                 position: relative;
                 overflow: hidden;
+                
             }
             #headshot_frame{
                 z-index: 2;
@@ -144,6 +149,7 @@ and open the template in the editor.
             }
             .stat_category{
                 font-weight: bold;
+                color: white;//rgb(55,56,57);//#00ff6a;
             }
             .table_header{
                 font-family: sans-serif;//verdana;

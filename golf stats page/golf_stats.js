@@ -4,396 +4,15 @@
  * and open the template in the editor.
  */
 var i;
-var data = {  
-   "last_five_tournaments":[  
-      {  
-         "finPos":{  
-            "playOffFlg":"",
-            "value":"T42",
-            "finCode":"T"
-         },
-         "scr":{  
-            "relToPar":"-4",
-            "totalScr":"276",
-            "rounds":[  
-               {  
-                  "rndNum":"Round 1",
-                  "posInField":"T1",
-                  "rndScr":"63"
-               },
-               {  
-                  "rndNum":"Round 2",
-                  "posInField":"T25",
-                  "rndScr":"73"
-               },
-               {  
-                  "rndNum":"Round 3",
-                  "posInField":"T46",
-                  "rndScr":"71"
-               },
-               {  
-                  "rndNum":"Round 4",
-                  "posInField":"T42",
-                  "rndScr":"69"
-               }
-            ]
-         },
-         "endDate":"6/24/18",
-         "schwabCupPoints":"",
-         "ssFinPos":"999",
-         "offMoney":"$24,500.00",
-         "fedexEvtPts":"12",
-         "trn":{  
-            "trnName":"Travelers Championship",
-            "permNum":"034",
-            "trnNum":"370",
-            "officialFlg":"Y"
-         },
-         "ssFinPosFinCode":"",
-         "fedexRnkReg":"37",
-         "ssMoney":"",
-         "fedexRnkPO":"",
-         "schwabCupRank":""
-      },
-      {  
-         "finPos":{  
-            "playOffFlg":"",
-            "value":"CUT",
-            "finCode":"C"
-         },
-         "scr":{  
-            "relToPar":"+9",
-            "totalScr":"149",
-            "rounds":[  
-               {  
-                  "rndNum":"Round 1",
-                  "posInField":"T101",
-                  "rndScr":"78"
-               },
-               {  
-                  "rndNum":"Round 2",
-                  "posInField":"T68",
-                  "rndScr":"71"
-               }
-            ]
-         },
-         "endDate":"6/17/18",
-         "schwabCupPoints":"",
-         "ssFinPos":"999",
-         "offMoney":"",
-         "fedexEvtPts":"",
-         "trn":{  
-            "trnName":"U.S. Open",
-            "permNum":"026",
-            "trnNum":"360",
-            "officialFlg":"Y"
-         },
-         "ssFinPosFinCode":"",
-         "fedexRnkReg":"38",
-         "ssMoney":"",
-         "fedexRnkPO":"",
-         "schwabCupRank":""
-      },
-      {  
-         "finPos":{  
-            "playOffFlg":"",
-            "value":"CUT",
-            "finCode":"C"
-         },
-         "scr":{  
-            "relToPar":"+3",
-            "totalScr":"147",
-            "rounds":[  
-               {  
-                  "rndNum":"Round 1",
-                  "posInField":"T85",
-                  "rndScr":"75"
-               },
-               {  
-                  "rndNum":"Round 2",
-                  "posInField":"T94",
-                  "rndScr":"72"
-               }
-            ]
-         },
-         "endDate":"6/03/18",
-         "schwabCupPoints":"",
-         "ssFinPos":"999",
-         "offMoney":"",
-         "fedexEvtPts":"",
-         "trn":{  
-            "trnName":"the Memorial Tournament presented by Nationwide",
-            "permNum":"023",
-            "trnNum":"340",
-            "officialFlg":"Y"
-         },
-         "ssFinPosFinCode":"",
-         "fedexRnkReg":"32",
-         "ssMoney":"",
-         "fedexRnkPO":"",
-         "schwabCupRank":""
-      },
-      {  
-         "finPos":{  
-            "playOffFlg":"",
-            "value":"T32",
-            "finCode":"T"
-         },
-         "scr":{  
-            "relToPar":"-5",
-            "totalScr":"275",
-            "rounds":[  
-               {  
-                  "rndNum":"Round 1",
-                  "posInField":"T44",
-                  "rndScr":"69"
-               },
-               {  
-                  "rndNum":"Round 2",
-                  "posInField":"T23",
-                  "rndScr":"68"
-               },
-               {  
-                  "rndNum":"Round 3",
-                  "posInField":"T38",
-                  "rndScr":"70"
-               },
-               {  
-                  "rndNum":"Round 4",
-                  "posInField":"T32",
-                  "rndScr":"68"
-               }
-            ]
-         },
-         "endDate":"5/27/18",
-         "schwabCupPoints":"",
-         "ssFinPos":"999",
-         "offMoney":"$36,068.00",
-         "fedexEvtPts":"20",
-         "trn":{  
-            "trnName":"Fort Worth Invitational",
-            "permNum":"021",
-            "trnNum":"330",
-            "officialFlg":"Y"
-         },
-         "ssFinPosFinCode":"",
-         "fedexRnkReg":"30",
-         "ssMoney":"",
-         "fedexRnkPO":"",
-         "schwabCupRank":""
-      },
-      {  
-         "finPos":{  
-            "playOffFlg":"",
-            "value":"T21",
-            "finCode":"T"
-         },
-         "scr":{  
-            "relToPar":"-11",
-            "totalScr":"273",
-            "rounds":[  
-               {  
-                  "rndNum":"Round 1",
-                  "posInField":"T57",
-                  "rndScr":"69"
-               },
-               {  
-                  "rndNum":"Round 2",
-                  "posInField":"T20",
-                  "rndScr":"66"
-               },
-               {  
-                  "rndNum":"Round 3",
-                  "posInField":"T29",
-                  "rndScr":"71"
-               },
-               {  
-                  "rndNum":"Round 4",
-                  "posInField":"T21",
-                  "rndScr":"67"
-               }
-            ]
-         },
-         "endDate":"5/20/18",
-         "schwabCupPoints":"",
-         "ssFinPos":"999",
-         "offMoney":"$80,080.00",
-         "fedexEvtPts":"39",
-         "trn":{  
-            "trnName":"AT&T Byron Nelson",
-            "permNum":"019",
-            "trnNum":"320",
-            "officialFlg":"Y"
-         },
-         "ssFinPosFinCode":"",
-         "fedexRnkReg":"31",
-         "ssMoney":"",
-         "fedexRnkPO":"",
-         "schwabCupRank":""
-      }
-   ],
-   "stats":[  
-      {  
-         "statID":"101",
-         "additionals":[  
-            {  
-               "title":"Total Distance",
-               "value":"29,787"
-            },
-            {  
-               "title":"Total Drives",
-               "value":"100"
-            }
-         ],
-         "name":"Driving Distance",
-         "rank":"76",
-         "projRank":"",
-         "value":"297.9"
-      },
-      {  
-         "statID":"102",
-         "additionals":[  
-            {  
-               "title":"Fairways Hit",
-               "value":"439"
-            },
-            {  
-               "title":"Possible Fairways",
-               "value":"701"
-            }
-         ],
-         "name":"Driving Accuracy Percentage",
-         "rank":"87",
-         "projRank":"",
-         "value":"62.62%"
-      },
-      {  
-         "statID":"103",
-         "additionals":[  
-            {  
-               "title":"Greens Hit",
-               "value":"645"
-            },
-            {  
-               "title":"# Holes",
-               "value":"900"
-            }
-         ],
-         "name":"Greens in Regulation Percentage",
-         "rank":"4",
-         "projRank":"",
-         "value":"71.67%"
-      },
-      {  
-         "statID":"155",
-         "additionals":[  
-            {  
-               "title":"# of Holes",
-               "value":"936"
-            },
-            {  
-               "title":"# of Eagles",
-               "value":"6"
-            }
-         ],
-         "name":"Eagles (Holes per)",
-         "rank":"46",
-         "projRank":"",
-         "value":"156.0"
-      },
-      {  
-         "statID":"156",
-         "additionals":[  
-            {  
-               "title":"# of Birdies",
-               "value":"219"
-            },
-            {  
-               "title":"Total Rounds",
-               "value":"52"
-            }
-         ],
-         "name":"Birdie Average",
-         "rank":"8",
-         "projRank":"",
-         "value":"4.21"
-      },
-      {  
-         "statID":"120",
-         "additionals":[  
-            {  
-               "title":"Total Strokes",
-               "value":"3,619"
-            },
-            {  
-               "title":"Total Adjustment",
-               "value":"19.030"
-            }
-         ],
-         "name":"Scoring Average",
-         "rank":"19",
-         "projRank":"",
-         "value":"69.962"
-      },
-      {  
-         "statID":"111",
-         "additionals":[  
-            {  
-               "title":"# Saves",
-               "value":"36"
-            },
-            {  
-               "title":"# Bunkers",
-               "value":"72"
-            }
-         ],
-         "name":"Sand Save Percentage",
-         "rank":"93",
-         "projRank":"",
-         "value":"50.00%"
-      },
-      {  
-         "statID":"109",
-         "additionals":[  
-            {  
-               "title":"",
-               "value":""
-            },
-            {  
-               "title":"YTD Victories",
-               "value":""
-            }
-         ],
-         "name":"Official Money",
-         "rank":"40",
-         "projRank":"",
-         "value":"$2,080,394"
-      },
-      {  
-         "statID":"186",
-         "additionals":[  
-            {  
-               "title":"Total Points",
-               "value":"342.01"
-            },
-            {  
-               "title":"Points lost",
-               "value":"-199.50"
-            }
-         ],
-         "name":"Official World Golf Ranking",
-         "rank":"6",
-         "projRank":"",
-         "value":"7.13"
-      }
-   ],
-   "pga_id":34046,
-   "name":"Jordan Spieth",
-   "country_abr":"USA",
-   "Weight":"185 lbs",
-   "birthString":"July 27, 1993 in Dallas, Texas (Age: 24)",
-   "height":"6\" 1'"
-};
+$.ajax({
+        url: 'https://api.myjson.com/bins/d79ia',
+        type: 'GET',
+        dataType: "json",
+        success: displayAll
+    });
+
+function displayAll(data){
+
             // Get the modal
             var modal = document.getElementById('stats_modal');
 
@@ -435,9 +54,9 @@ var data = {
 
 
                 var header = document.getElementById("player_name");
-                header.innerHTML = "Jordan Spieth";
+                header.innerHTML = data.name;
                 var header = document.getElementById("mobile_playername");
-                header.innerHTML = "Jordan Spieth";
+                header.innerHTML = data.name;
 
                 var player_pic = document.getElementById('headshot');
                 player_pic.src = 'https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_2.0,f_auto,g_face:center,h_160,q_auto,w_250/headshots_' + data.pga_id + '.png';
@@ -463,36 +82,42 @@ var data = {
                 var table_info = document.getElementById("born_table");
                 table_info.innerHTML = data.birthString;
 
-            
+                var prev_games = document.getElementById("prev_games");
+                if (data.last_five_tournaments.length == 0){
+                    prev_games.innerHTML = "Last Five Tournaments - NO STATS AVAILABLE";
+                }
+                else{
+                    prev_games.innerHTML = "Last Five Tournaments";
+                }
                 var season_stats = document.getElementById("season_stats");
-                season_stats.innerHTML = "2018 PGA TOUR Season Stats";
-
+                if (data.stats.length == 0){
+                    season_stats.innerHTML = "2018 PGA TOUR Season Stats - NO STATS AVAILABLE";
+                }
+                else{
+                   season_stats.innerHTML = "2018 PGA TOUR Season Stats";  
+                }
+                
                 var sst = document.getElementById("season_stats_table").rows[0].cells;
                 sst[0].innerHTML = data.stats[0].name;
-                sst[1].innerHTML = data.stats[1].name;
-                sst[2].innerHTML = data.stats[2].name;
+                sst[1].innerHTML = (data.stats[1].name).replace("Percentage", "%");
+                sst[2].innerHTML = (data.stats[2].name).replace("Percentage", "%");
                 sst[3].innerHTML = data.stats[3].name;
-                sst[4].innerHTML = data.stats[4].name;
                 var sst = document.getElementById("season_stats_table").rows[2].cells;
-                sst[0].innerHTML = data.stats[5].name;
-                sst[1].innerHTML = data.stats[6].name;
-                sst[2].innerHTML = data.stats[7].name;
-                sst[3].innerHTML = data.stats[8].name;
+                sst[0].innerHTML = (data.stats[4].name).replace("Average", "AVG");
+                sst[1].innerHTML = (data.stats[5].name).replace("Percentage", "%");
+                sst[2].innerHTML = data.stats[6].name;
+                sst[3].innerHTML = data.stats[7].name.replace("Percentage", "%");
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
                 sst[0].innerHTML = data.stats[0].value + ' (' + data.stats[0].rank + ')';
                 sst[1].innerHTML = data.stats[1].value + ' (' + data.stats[1].rank + ')';
                 sst[2].innerHTML = data.stats[2].value + ' (' + data.stats[2].rank + ')';
                 sst[3].innerHTML = data.stats[3].value + ' (' + data.stats[3].rank + ')';
-                sst[4].innerHTML = data.stats[4].value + ' (' + data.stats[4].rank + ')';
                 var sst = document.getElementById("season_stats_table").rows[3].cells;
-                sst[0].innerHTML = data.stats[5].value + ' (' + data.stats[5].rank + ')';
-                sst[1].innerHTML = data.stats[6].value + ' (' + data.stats[6].rank + ')';
-                sst[2].innerHTML = data.stats[7].value + ' (' + data.stats[7].rank + ')';
-                sst[3].innerHTML = data.stats[8].value + ' (' + data.stats[8].rank + ')';
-            
-                var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Last Five Tournaments";
-
+                sst[0].innerHTML = data.stats[4].value + ' (' + data.stats[4].rank + ')';
+                sst[1].innerHTML = data.stats[5].value + ' (' + data.stats[5].rank + ')';
+                sst[2].innerHTML = data.stats[6].value + ' (' + data.stats[6].rank + ')';
+                sst[3].innerHTML = data.stats[7].value;
+ 
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "End Date";
                 pgt[1].innerHTML = "Tournament";
@@ -567,3 +192,4 @@ var data = {
             };
 
 
+}
