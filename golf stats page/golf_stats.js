@@ -5,7 +5,7 @@
  */
 var i;
 $.ajax({
-        url: 'https://api.myjson.com/bins/d79ia',
+        url: 'https://api.myjson.com/bins/d79ia', //DJ:https://api.myjson.com/bins/d79ia, https://api.myjson.com/bins/189omi
         type: 'GET',
         dataType: "json",
         success: displayAll
@@ -83,18 +83,17 @@ function displayAll(data){
                 table_info.innerHTML = data.birthString;
 
                 var prev_games = document.getElementById("prev_games");
+                prev_games.innerHTML = "Last Five Tournaments";
+                var pgt = document.getElementById("prev_games_table").rows[0].cells;
+                
                 if (data.last_five_tournaments.length == 0){
-                    prev_games.innerHTML = "Last Five Tournaments - NO STATS AVAILABLE";
-                }
-                else{
-                    prev_games.innerHTML = "Last Five Tournaments";
-                }
+                    pgt[0].innerHTML = "NO STATS AVAILABLE";
+                }                
                 var season_stats = document.getElementById("season_stats");
+                var sst = document.getElementById("season_stats_table").rows[0].cells;
+                season_stats.innerHTML = "2018 PGA TOUR Season Stats";
                 if (data.stats.length == 0){
-                    season_stats.innerHTML = "2018 PGA TOUR Season Stats - NO STATS AVAILABLE";
-                }
-                else{
-                   season_stats.innerHTML = "2018 PGA TOUR Season Stats";  
+                    sst[0].innerHTML = "NO STATS AVAILABLE";
                 }
                 
                 var sst = document.getElementById("season_stats_table").rows[0].cells;
@@ -106,7 +105,8 @@ function displayAll(data){
                 sst[0].innerHTML = (data.stats[4].name).replace("Average", "AVG");
                 sst[1].innerHTML = (data.stats[5].name).replace("Percentage", "%");
                 sst[2].innerHTML = data.stats[6].name;
-                sst[3].innerHTML = data.stats[7].name.replace("Percentage", "%");
+                sst[3].innerHTML = (data.stats[7].name).replace("Percentage", "%");
+                
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
                 sst[0].innerHTML = data.stats[0].value + ' (' + data.stats[0].rank + ')';
                 sst[1].innerHTML = data.stats[1].value + ' (' + data.stats[1].rank + ')';
@@ -116,7 +116,7 @@ function displayAll(data){
                 sst[0].innerHTML = data.stats[4].value + ' (' + data.stats[4].rank + ')';
                 sst[1].innerHTML = data.stats[5].value + ' (' + data.stats[5].rank + ')';
                 sst[2].innerHTML = data.stats[6].value + ' (' + data.stats[6].rank + ')';
-                sst[3].innerHTML = data.stats[7].value;
+                sst[3].innerHTML = Number.parseFloat(data.stats[7].value).toFixed(2) + '%';
  
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "End Date";
