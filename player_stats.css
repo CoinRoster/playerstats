@@ -17,6 +17,9 @@ and open the template in the editor.
                 font-family: sans-serif;
                 font-weight: bold;
             }
+            #playerphoto{
+                margin-top: 2%;
+            }
             #mobile_header{
                 display: none;
             }
