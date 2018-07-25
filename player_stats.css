@@ -6,56 +6,6 @@ and open the template in the editor.
 /* 
     Created on : 13-Jul-2018, 2:49:53 PM
 */
-            .tab{
-                border: 1px solid white;
-                border-bottom: transparent;
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
-                background-color: #232426;
-                color: white;
-                font-size: 1.2vw; 
-                font-family: sans-serif;
-                font-weight: bold;
-            }
-            #playerphoto{
-                margin-top: 2%;
-            }
-            #mobile_header{
-                display: none;
-            }
-            #stats_table{
-                border: transparent;
-                border-radius: 10px;
-                border-top-left-radius: 0px;
-            }
-            #newsfeed{
-                display: none;
-                padding: 0px;
-                //border: 1px solid yellow;
-                //font-size: 5px;
-            }
-            .modal-body{
-                max-height: 410px;
-                overflow: scroll;
-                padding: 0px;
-            }
-            #footer{
-                padding: 0px;
-                position: relative;
-            }
-            #draft_button{
-                margin-top: 2vh;
-                margin-bottom: -1vh;
-                float: right;
-                padding: 8px;
-                border:0;
-                border-radius: 5px;
-                background-color: #00ff6a;
-                color: white;
-                font-size: 1.2vw; 
-                font-family: sans-serif;
-                font-weight: bold;
-            }
             ::-webkit-scrollbar {
                 width: 0px;
                 height: 0px;               
@@ -87,6 +37,40 @@ and open the template in the editor.
             p{
                 //margin-top: 0%;
                 margin-bottom: 0%;
+            }
+            #playerphoto{
+                margin-top: 2%;
+            }
+            #mobile_header{
+                display: none;
+            }
+            #stats_table{
+                border: transparent;
+                border-radius: 10px;
+                border-top-left-radius: 0px;
+            }
+            #footer{
+                padding: 0px;
+                position: relative;
+            }
+            #draft_button{
+                margin-top: 2vh;
+                margin-bottom: -1vh;
+                float: right;
+                padding: 8px;
+                border:0;
+                border-radius: 5px;
+                background-color: #00ff6a;
+                color: white;
+                font-size: 1.2vw; 
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            #newsfeed{
+                display: none;
+                padding: 0px;
+                //border: 1px solid yellow;
+                //font-size: 5px;
             }
             #link{
                 font-family: verdana;
@@ -136,6 +120,23 @@ and open the template in the editor.
             }
             #underline{
                 margin-bottom: 2%;
+            }
+            .tab{
+                border: 1px solid white;
+                border-bottom: transparent;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                background-color: #232426;
+                color: white;
+                font-size: 1.2vw; 
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            
+            .modal-body{
+                max-height: 410px;
+                overflow: scroll;
+                padding: 0px;
             }
             .seperator{
                 width: 100%;
