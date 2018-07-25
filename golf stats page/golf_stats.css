@@ -6,17 +6,41 @@ and open the template in the editor.
 /* 
     Created on : 19-Jul-2018, 1:28:46 PM
 */
-
-            .tab{
-                border: 1px solid white;
-                border-bottom: transparent;
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
-                background-color: #232426;
-                color: white;
-                font-size: 1.2vw; 
-                font-family: sans-serif;
+            ::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;               
+            }
+            body{
+                background-color: rgb(35,36,38);
+            }
+            table{
+                width:100%;       
+            }
+            th, td {
+                padding: 4px; 
+                text-align: left;
+                background-color: #f2f2f2;
+                font-family: verdana;
+                font-size: 12px;
                 font-weight: bold;
+                color: rgb(55,56,57);//#c9dee0;
+                background-color: grey;  
+            }
+            caption{
+                padding-left: 5px;
+                font-size: 15px; 
+                margin-bottom: 0%;
+                font-family: sans-serif;//verdana;
+                color: white;//#00ff6a;
+                background-color: #232426;
+                font-weight: bold;
+            }
+            p{
+                //margin-top: 0%;
+                margin-bottom: 0%;
+            }
+            #playerphoto{
+                margin-top: 2%;
             }
             #mobile_header{
                 display: none;
@@ -25,15 +49,6 @@ and open the template in the editor.
                 border: transparent;
                 border-radius: 10px;
                 border-top-left-radius: 0px;
-            }
-            #newsfeed{
-                display: none;
-                padding: 0px;
-            }
-            .modal-body{
-                max-height: 410px;
-                overflow: scroll;
-                padding: 0px;
             }
             #footer{
                 padding: 0px;
@@ -52,37 +67,9 @@ and open the template in the editor.
                 font-family: sans-serif;
                 font-weight: bold;
             }
-            ::-webkit-scrollbar {
-                width: 0px;
-                height: 0px;               
-            }
-            body{
-                background-color: rgb(35,36,38);
-            }
-            table{
-                width:100%;       
-            }
-            th, td {
-                padding: 4px; 
-                text-align: left;
-                background-color: #f2f2f2;
-                font-family: verdana;
-                font-size: 12px;
-                color: #c9dee0;
-                background-color: grey;  
-            }
-            caption{
-                padding-left: 5px;
-                font-size: 15px; 
-                margin-bottom: 0%;
-                font-family: sans-serif;//verdana;
-                color: white;//#00ff6a;
-                background-color: #232426;
-                font-weight: bold;
-            }
-            p{
-                //margin-top: 0%;
-                margin-bottom: 0%;
+            #newsfeed{
+                display: none;
+                padding: 0px;
             }
             #link{
                 font-family: verdana;
@@ -110,6 +97,7 @@ and open the template in the editor.
             #frame{
                 position: relative;
                 overflow: hidden;
+                
             }
             #headshot_frame{
                 z-index: 2;
@@ -135,6 +123,23 @@ and open the template in the editor.
             #underline{
                 margin-bottom: 2%;
             }
+            .tab{
+                border: 1px solid white;
+                border-bottom: transparent;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+                background-color: #232426;
+                color: white;
+                font-size: 1.2vw; 
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            
+            .modal-body{
+                max-height: 410px;
+                overflow: scroll;
+                padding: 0px;
+            }
             .seperator{
                 width: 100%;
                 //padding-top: 5px;
@@ -144,6 +149,7 @@ and open the template in the editor.
             }
             .stat_category{
                 font-weight: bold;
+                color: white;//rgb(55,56,57);//#00ff6a;
             }
             .table_header{
                 font-family: sans-serif;//verdana;
