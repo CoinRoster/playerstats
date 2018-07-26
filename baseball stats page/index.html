@@ -57,7 +57,8 @@ and open the template in the editor.
                                 <h1 id="player_name"></h1>    
                                 <hr id="underline" class="seperator">
                             </div>
-                            <div id="listinfo">                       
+                            <div id="listinfo">      
+                                <p id="team_list"></p>
                                 <p id="pos_list"></p>
                                 <p id="height_list"></p>
                                 <p id="weight_list"></p>
@@ -66,20 +67,22 @@ and open the template in the editor.
                             <div id="tableinfo" class="table-responsive">
                                 <table>
                                     <tr>
+                                        <td class="table_header">Team</td>
                                         <td class="table_header">Pos</td>
                                         <td class="table_header">Height</td>
                                         <td class="table_header">Weight</td>
                                     </tr>
                                     <tr>
+                                        <td id="team_table"></td>
                                         <td id="pos_table"></td>
                                         <td id="height_table"></td>
                                         <td id="weight_table"></td>
                                     </tr>
                                     <tr>
-                                        <td class="table_header" colspan="3">Born</td>
+                                        <td class="table_header" colspan="4">Born</td>
                                     </tr>
                                     <tr>
-                                        <td id="born_table" colspan="3"></td>
+                                        <td id="born_table" colspan="4"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -103,8 +106,10 @@ and open the template in the editor.
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                             </tr>
                             <tr>   
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -156,6 +161,7 @@ and open the template in the editor.
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                
                             </tr>
 
                             <tr>

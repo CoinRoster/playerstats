@@ -5,7 +5,7 @@
  */
 var i;
 $.ajax({
-    url: 'https://api.myjson.com/bins/7ph4y',
+    url: 'https://api.myjson.com/bins/g92fu',
     type: 'GET',
     dataType: "json",
     success: displayAll
@@ -60,18 +60,21 @@ function displayAll(data){
                 var player_pic = document.getElementById('headshot');
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/' + data.id + '.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');            
-                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bos.png&w=110&h=110&transparent=true';
+                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/' + data.team_abr + '.png&w=110&h=110&transparent=true';
 
-
+                var list_info = document.getElementById("team_list");
+                list_info.innerHTML = 'Team: ' + data.team_abr;
                 var list_info = document.getElementById("pos_list");
                 list_info.innerHTML = 'Pos: ' + data.pos;
                 var list_info = document.getElementById("height_list");
-                list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.Weight;
+                list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.weight;
                 //var list_info = document.getElementById("weight_list");
                 //list_info.innerHTML = 'Weight: ' + data.Weight;
                 var list_info = document.getElementById("born_list");
                 list_info.innerHTML = 'Born: ' + data.birthString;
 
+                var table_info = document.getElementById("team_table");
+                table_info.innerHTML = data.team_abr;
                 var table_info = document.getElementById("pos_table");
                 table_info.innerHTML = data.pos;
                 var table_info = document.getElementById("height_table");
@@ -106,7 +109,7 @@ function displayAll(data){
                 sst[6].innerHTML = data.year_stats.H;
                 sst[7].innerHTML = data.year_stats.BB;
                 sst[8].innerHTML = data.year_stats.K;
-                sst[9].innerHTML = data.year_stats.K;
+                sst[9].innerHTML = data.year_stats.OPS;
             
             
                 var career_stats = document.getElementById("career_stats");
@@ -120,6 +123,9 @@ function displayAll(data){
                 cst[4].innerHTML = "RBI";
                 cst[5].innerHTML = "R";
                 cst[6].innerHTML = "H";
+                cst[7].innerHTML = "BB";
+                cst[8].innerHTML = "K";
+                cst[9].innerHTML = "OPS";
                 var cst = document.getElementById("career_stats_table").rows[1].cells;
                 cst[0].innerHTML = data.career_stats.GP;
                 cst[1].innerHTML = data.career_stats.AB;
@@ -128,7 +134,9 @@ function displayAll(data){
                 cst[4].innerHTML = data.career_stats.RBI;
                 cst[5].innerHTML = data.career_stats.R;
                 cst[6].innerHTML = data.career_stats.H;
-
+                cst[7].innerHTML = data.career_stats.BB;
+                cst[8].innerHTML = data.career_stats.K;
+                cst[9].innerHTML = data.career_stats.OPS;
             
                 var prev_games = document.getElementById("prev_games");
                 prev_games.innerHTML = "Last Five Games";
