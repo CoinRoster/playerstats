@@ -205,6 +205,9 @@ and open the template in the editor.
                     font-size: 8vw;
                     text-align: center;
                 }
+                #season_stats_table, #career_stats_table, #prev_games_table{
+                    width: 150%;
+                }
                 caption{
                     font-size: 4vw;
                     padding-left: 5px;
