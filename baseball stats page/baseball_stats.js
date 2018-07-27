@@ -143,7 +143,62 @@ function displayAll(data){
             
                 var prev_games = document.getElementById("prev_games");
                 prev_games.innerHTML = "Game Log";
+                
+                var game_log_table = document.getElementById("prev_games_table");
+                var games = data.last_ten_games;
 
+                //INSERT HEADER ROW 
+                var row = game_log_table.insertRow(0);
+                row.className = "stat_category";
+                
+                var OPP = row.insertCell(0);
+                var H = row.insertCell(1);
+                var AB = row.insertCell(2);
+                var HR = row.insertCell(3);
+                var RBI = row.insertCell(4);
+                var R = row.insertCell(5);
+                var SB = row.insertCell(6);
+                var BB = row.insertCell(7);
+                var K = row.insertCell(8);
+                
+                OPP.innerHTML = "OPP";
+                H.innerHTML = "H";
+                AB.innerHTML = "AB";
+                HR.innerHTML = "HR";
+                RBI.innerHTML = "RBI";
+                R.innerHTML = "R"; 
+                SB.innerHTML = "SB";
+                BB.innerHTML = "BB";
+                K.innerHTML = "K";                
+            
+                //INSERT GAMES
+                for(i = 1; i <= games.length; i++){
+
+                    // Create an empty <tr> element and add it to the 2nd position of the table (header row is first):
+                    var row = game_log_table.insertRow(i);
+
+                    var OPP = row.insertCell(0);
+                    var H = row.insertCell(1);
+                    var AB = row.insertCell(2);
+                    var HR = row.insertCell(3);
+                    var RBI = row.insertCell(4);
+                    var R = row.insertCell(5);
+                    var SB = row.insertCell(6);
+                    var BB = row.insertCell(7);
+                    var K = row.insertCell(8);
+
+                    // Add some text to the new cells:
+                    OPP.innerHTML = games[i-1].OPP + "<br/>" + games[i-1].SCORE;
+                    H.innerHTML = games[i-1].H;
+                    AB.innerHTML = games[i-1].AB;
+                    HR.innerHTML = games[i-1].HR;                  
+                    RBI.innerHTML = games[i-1].RBI;
+                    R.innerHTML = games[i-1].R;
+                    SB.innerHTML = games[i-1].SB;
+                    BB.innerHTML = games[i-1].BB;
+                    K.innerHTML = games[i-1].K;
+                }
+                /* 
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "Opp";
                 pgt[1].innerHTML = "H";
@@ -165,7 +220,8 @@ function displayAll(data){
                     pgt[6].innerHTML = data.last_ten_games[i-1].SB;
                     pgt[7].innerHTML = data.last_ten_games[i-1].BB;
                     pgt[8].innerHTML = data.last_ten_games[i-1].K;
-                }
+                }*/               
+
             };
 
             // When the user clicks on <span> (x), close the modal

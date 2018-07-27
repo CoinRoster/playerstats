@@ -227,16 +227,16 @@
                 sst[1].innerHTML = "PTS";
                 sst[2].innerHTML = "REB";
                 sst[3].innerHTML = "AST";
-                sst[4].innerHTML = "BLK";
-                sst[5].innerHTML = "STL";
+                sst[4].innerHTML = "STL";
+                sst[5].innerHTML = "BLK";
                 sst[6].innerHTML = "TO";
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
                 sst[0].innerHTML = data.year_stats.MPG;
                 sst[1].innerHTML = data.year_stats.PPG;
                 sst[2].innerHTML = data.year_stats.RPG;
                 sst[3].innerHTML = data.year_stats.APG;
-                sst[4].innerHTML = data.year_stats.BLKPG;
-                sst[5].innerHTML = data.year_stats.STLPG;
+                sst[4].innerHTML = data.year_stats.STLPG;
+                sst[5].innerHTML = data.year_stats.BLKPG;
                 sst[6].innerHTML = data.year_stats.TOPG;
             
             
@@ -248,22 +248,73 @@
                 cst[1].innerHTML = "PTS";
                 cst[2].innerHTML = "REB";
                 cst[3].innerHTML = "AST";
-                cst[4].innerHTML = "BLK";
-                cst[5].innerHTML = "STL";
+                cst[4].innerHTML = "STL";
+                cst[5].innerHTML = "BLK";
                 cst[6].innerHTML = "TO";
                 var cst = document.getElementById("career_stats_table").rows[1].cells;
                 cst[0].innerHTML = data.career_stats.MPG;
                 cst[1].innerHTML = data.career_stats.PPG;
                 cst[2].innerHTML = data.career_stats.RPG;
                 cst[3].innerHTML = data.career_stats.APG;
-                cst[4].innerHTML = data.career_stats.BLKPG;
-                cst[5].innerHTML = data.career_stats.STLPG;
+                cst[4].innerHTML = data.career_stats.STLPG;
+                cst[5].innerHTML = data.career_stats.BLKPG;
                 cst[6].innerHTML = data.career_stats.TOPG;
 
             
                 var prev_games = document.getElementById("prev_games");
                 prev_games.innerHTML = "Game Log";
+                
+                var game_log_table = document.getElementById("prev_games_table");
+                var games = data.last_five_games;
 
+                //INSERT HEADER ROW 
+                var row = game_log_table.insertRow(0);
+                row.className = "stat_category";
+                
+                var OPP = row.insertCell(0);
+                var MIN = row.insertCell(1);
+                var PTS = row.insertCell(2);
+                var REB = row.insertCell(3);
+                var AST = row.insertCell(4);
+                var STL = row.insertCell(5);
+                var BLK = row.insertCell(6);
+                var TO = row.insertCell(7);
+                
+                OPP.innerHTML = "OPP";
+                MIN.innerHTML = "MIN";
+                PTS.innerHTML = "PTS";
+                REB.innerHTML = "REB";
+                AST.innerHTML = "AST";                 
+                STL.innerHTML = "STL";
+                BLK.innerHTML = "BLK";
+                TO.innerHTML = "TO";               
+            
+                //INSERT GAMES
+                for(i = 1; i <= games.length; i++){
+
+                    // Create an empty <tr> element and add it to the 2nd position of the table (header row is first):
+                    var row = game_log_table.insertRow(i);
+
+                    var OPP = row.insertCell(0);
+                    var MIN = row.insertCell(1);
+                    var PTS = row.insertCell(2);
+                    var REB = row.insertCell(3);
+                    var AST = row.insertCell(4);
+                    var STL = row.insertCell(5);
+                    var BLK = row.insertCell(6);
+                    var TO = row.insertCell(7);
+
+                    // Add some text to the new cells:
+                    OPP.innerHTML = games[i-1].OPP + "<br/>" + games[i-1].SCORE;
+                    MIN.innerHTML = games[i-1].MIN;
+                    PTS.innerHTML = games[i-1].PTS;
+                    REB.innerHTML = games[i-1].REB;                  
+                    AST.innerHTML = games[i-1].AST;
+                    STL.innerHTML = games[i-1].STL;
+                    BLK.innerHTML = games[i-1].BLK;
+                    TO.innerHTML = games[i-1].TO;
+                }
+                /*
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "Opp";
                 pgt[1].innerHTML = "MIN";
@@ -285,7 +336,7 @@
                     pgt[6].innerHTML = data.last_five_games[i-1].STL;
                     pgt[7].innerHTML = data.last_five_games[i-1].TO;
 
-                }
+                }*/
             };
 
             // When the user clicks on <span> (x), close the modal

@@ -82,13 +82,22 @@ function displayAll(data){
                 var table_info = document.getElementById("born_table");
                 table_info.innerHTML = data.birthString;
 
+
+
+
                 var prev_games = document.getElementById("prev_games");
                 prev_games.innerHTML = "Previous Tournaments";
-                var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 
+                var game_log_table = document.getElementById("prev_games_table");
+                var games = data.last_five_tournaments;
+
+                //INSERT HEADER ROW 
+                var row = game_log_table.insertRow(0);
                 if (data.last_five_tournaments.length == 0){
-                    pgt[0].innerHTML = "NO STATS AVAILABLE";
-                }                
+                    var End_Date = row.insertCell(0);
+                    End_Date.innerHTML = "NO STATS AVAILABLE";
+                }   
+                
                 var season_stats = document.getElementById("season_stats");
                 var sst = document.getElementById("season_stats_table").rows[0].cells;
                 season_stats.innerHTML = "2018 PGA TOUR Season Stats";
@@ -118,6 +127,101 @@ function displayAll(data){
                 sst[2].innerHTML = data.stats[6].value + ' (' + data.stats[6].rank + ')';
                 sst[3].innerHTML = Number.parseFloat(data.stats[7].value).toFixed(2) + '%';
  
+                var game_log_table = document.getElementById("prev_games_table");
+                var games = data.last_five_tournaments;
+
+                //INSERT HEADER ROW 
+                var row = game_log_table.insertRow(0);
+                //row.className = "stat_category";
+                
+                var End_Date = row.insertCell(0);
+                var Tournament = row.insertCell(1);
+                var POS = row.insertCell(2);
+                var R1 = row.insertCell(3);
+                var R2 = row.insertCell(4);
+                var R3 = row.insertCell(5);
+                var R4 = row.insertCell(6);
+                var TOT = row.insertCell(7);
+                
+                End_Date.className = "stat_category";
+                Tournament.className = "stat_category";
+                POS.className = "stat_category";
+                R1.className = "stat_category";
+                R2.className = "stat_category";
+                R3.className = "stat_category";
+                R4.className = "stat_category";
+                TOT.className = "stat_category";
+                
+                End_Date.innerHTML = "End Date";
+                Tournament.innerHTML = "Tournament";
+                POS.innerHTML = "POS";
+                R1.innerHTML = "R1";
+                R2.innerHTML = "R2";
+                R3.innerHTML = "R3"; 
+                R4.innerHTML = "R4";
+                TOT.innerHTML = "TOT";                
+            
+                //INSERT GAMES
+                for(i = 1; i <= games.length; i++){
+
+                    // Create an empty <tr> element and add it to the 2nd position of the table (header row is first):
+                    var row = game_log_table.insertRow(i);
+
+                    var End_Date = row.insertCell(0);
+                    var Tournament = row.insertCell(1);
+                    var POS = row.insertCell(2);
+                    var R1 = row.insertCell(3);
+                    var R2 = row.insertCell(4);
+                    var R3 = row.insertCell(5);
+                    var R4 = row.insertCell(6);
+                    var TOT = row.insertCell(7);
+                    
+                    var endDate = games[i-1].endDate;
+                    var event = games[i-1].trn.trnName;
+                    var pos = games[i-1].finPos.value;
+                    var total = '(' + games[i-1].scr.relToPar + ')';
+                    var r1 = games[i-1].scr.rounds;                  
+                    if(r1.length < 1){
+                        r1 = "0";
+                    }
+                    else {
+                        r1 = games[i-1].scr.rounds[0].rndScr;
+                    }
+
+                    var r2 = games[i-1].scr.rounds;
+                    if(r2.length < 2){
+                        r2 = "0";
+                    }
+                    else {
+                        r2 = games[i-1].scr.rounds[1].rndScr;
+                    }
+                    
+                    var r3 = games[i-1].scr.rounds;
+                    if(r3.length < 3){
+                        r3 = "0";
+                    }
+                    else {
+                        r3 = games[i-1].scr.rounds[2].rndScr;
+                    }
+                    
+                    var r4 = games[i-1].scr.rounds;
+                    if(r4.length < 4){
+                        r4 = "0";
+                    }
+                    else {
+                        r4 = games[i-1].scr.rounds[3].rndScr;
+                    }
+                    // Add some text to the new cells:
+                    End_Date.innerHTML = endDate;
+                    Tournament.innerHTML = event;
+                    POS.innerHTML = pos;
+                    TOT.innerHTML = total;                  
+                    R1.innerHTML = r1;
+                    R2.innerHTML = r2;
+                    R3.innerHTML = r3;
+                    R4.innerHTML = r4;
+                }
+                /*
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "End Date";
                 pgt[1].innerHTML = "Tournament";
@@ -127,46 +231,11 @@ function displayAll(data){
                 pgt[5].innerHTML = "R3";
                 pgt[6].innerHTML = "R4";
                 pgt[7].innerHTML = "TOT";                   
-            
-                for(var i = 1;i <= 5;i++){
+                */
+                //for(var i = 1;i <= 5;i++){
 
-                    var endDate = data.last_five_tournaments[i-1].endDate;
-                    var event = data.last_five_tournaments[i-1].trn.trnName;
-                    var pos = data.last_five_tournaments[i-1].finPos.value;
-                    var total = '(' + data.last_five_tournaments[i-1].scr.relToPar + ')';
                     
-                    var r1 = data.last_five_tournaments[i-1].scr.rounds;                  
-                    if(r1.length < 1){
-                        r1 = "0";
-                    }
-                    else {
-                        r1 = data.last_five_tournaments[i-1].scr.rounds[0].rndScr;
-                    }
-
-                    var r2 = data.last_five_tournaments[i-1].scr.rounds;
-                    if(r2.length < 2){
-                        r2 = "0";
-                    }
-                    else {
-                        r2 = data.last_five_tournaments[i-1].scr.rounds[1].rndScr;
-                    }
-                    
-                    var r3 = data.last_five_tournaments[i-1].scr.rounds;
-                    if(r3.length < 3){
-                        r3 = "0";
-                    }
-                    else {
-                        r3 = data.last_five_tournaments[i-1].scr.rounds[2].rndScr;
-                    }
-                    
-                    var r4 = data.last_five_tournaments[i-1].scr.rounds;
-                    if(r4.length < 4){
-                        r4 = "0";
-                    }
-                    else {
-                        r4 = data.last_five_tournaments[i-1].scr.rounds[3].rndScr;
-                    }
-                    
+                    /*
                     var pgt = document.getElementById("prev_games_table").rows[i].cells;
                     pgt[0].innerHTML = endDate;
                     pgt[1].innerHTML = event;
@@ -176,8 +245,8 @@ function displayAll(data){
                     pgt[5].innerHTML = r3;
                     pgt[6].innerHTML = r4;
                     pgt[7].innerHTML = total;
-
-                }
+                    */
+                //}
             };
 
             // When the user clicks on <span> (x), close the modal
