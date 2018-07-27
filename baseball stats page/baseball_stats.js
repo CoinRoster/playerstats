@@ -5,7 +5,7 @@
  */
 var i;
 $.ajax({
-    url: 'https://api.myjson.com/bins/g92fu',
+    url: 'https://api.myjson.com/bins/g92fu', //mookie: https://api.myjson.com/bins/g92fu ,less: https://api.myjson.com/bins/8o0yq
     type: 'GET',
     dataType: "json",
     success: displayAll
@@ -142,7 +142,7 @@ function displayAll(data){
                 cst[10].innerHTML = data.career_stats.OPS;
             
                 var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Last Ten Games";
+                prev_games.innerHTML = "Game Log";
 
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "Opp";

@@ -83,7 +83,7 @@ function displayAll(data){
                 table_info.innerHTML = data.birthString;
 
                 var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Last Five Tournaments";
+                prev_games.innerHTML = "Previous Tournaments";
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 
                 if (data.last_five_tournaments.length == 0){
