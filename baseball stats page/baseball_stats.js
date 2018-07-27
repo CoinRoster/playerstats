@@ -96,9 +96,10 @@ function displayAll(data){
                 sst[4].innerHTML = "RBI";
                 sst[5].innerHTML = "R";
                 sst[6].innerHTML = "H";
-                sst[7].innerHTML = "BB";
-                sst[8].innerHTML = "K";
-                sst[9].innerHTML = "OPS";
+                sst[7].innerHTML = "SB";
+                sst[8].innerHTML = "BB";
+                sst[9].innerHTML = "K";
+                sst[10].innerHTML = "OPS";
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
                 sst[0].innerHTML = data.year_stats.GP;
                 sst[1].innerHTML = data.year_stats.AB;
@@ -107,10 +108,10 @@ function displayAll(data){
                 sst[4].innerHTML = data.year_stats.RBI;
                 sst[5].innerHTML = data.year_stats.R;
                 sst[6].innerHTML = data.year_stats.H;
-                sst[7].innerHTML = data.year_stats.BB;
-                sst[8].innerHTML = data.year_stats.K;
-                sst[9].innerHTML = data.year_stats.OPS;
-            
+                sst[7].innerHTML = data.year_stats.SB;
+                sst[8].innerHTML = data.year_stats.BB;
+                sst[9].innerHTML = data.year_stats.K;
+                sst[10].innerHTML = data.year_stats.OPS;
             
                 var career_stats = document.getElementById("career_stats");
                 career_stats.innerHTML = "Career Stats";
@@ -123,9 +124,10 @@ function displayAll(data){
                 cst[4].innerHTML = "RBI";
                 cst[5].innerHTML = "R";
                 cst[6].innerHTML = "H";
-                cst[7].innerHTML = "BB";
-                cst[8].innerHTML = "K";
-                cst[9].innerHTML = "OPS";
+                cst[7].innerHTML = "SB"
+                cst[8].innerHTML = "BB";
+                cst[9].innerHTML = "K";
+                cst[10].innerHTML = "OPS";
                 var cst = document.getElementById("career_stats_table").rows[1].cells;
                 cst[0].innerHTML = data.career_stats.GP;
                 cst[1].innerHTML = data.career_stats.AB;
@@ -134,34 +136,35 @@ function displayAll(data){
                 cst[4].innerHTML = data.career_stats.RBI;
                 cst[5].innerHTML = data.career_stats.R;
                 cst[6].innerHTML = data.career_stats.H;
-                cst[7].innerHTML = data.career_stats.BB;
-                cst[8].innerHTML = data.career_stats.K;
-                cst[9].innerHTML = data.career_stats.OPS;
+                cst[7].innerHTML = data.career_stats.SB;
+                cst[8].innerHTML = data.career_stats.BB;
+                cst[9].innerHTML = data.career_stats.K;
+                cst[10].innerHTML = data.career_stats.OPS;
             
                 var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Last Five Games";
+                prev_games.innerHTML = "Last Ten Games";
 
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;
                 pgt[0].innerHTML = "Opp";
-                pgt[1].innerHTML = "AB";
-                pgt[2].innerHTML = "H";
+                pgt[1].innerHTML = "H";
+                pgt[2].innerHTML = "AB";
                 pgt[3].innerHTML = "HR";
                 pgt[4].innerHTML = "RBI";
                 pgt[5].innerHTML = "R";
-                pgt[6].innerHTML = "BB";
-                pgt[7].innerHTML = "SB";                   
-            
-                for(var i = 1;i <= 5;i++){
+                pgt[6].innerHTML = "SB";
+                pgt[7].innerHTML = "BB";                   
+                pgt[8].innerHTML = "K";
+                for(var i = 1;i <= 10;i++){
                     var pgt = document.getElementById("prev_games_table").rows[i].cells;
                     pgt[0].innerHTML = data.last_ten_games[i-1].OPP + "<br />" + data.last_ten_games[i-1].SCORE;
-                    pgt[1].innerHTML = data.last_ten_games[i-1].AB;
-                    pgt[2].innerHTML = data.last_ten_games[i-1].H;
+                    pgt[1].innerHTML = data.last_ten_games[i-1].H;
+                    pgt[2].innerHTML = data.last_ten_games[i-1].AB;
                     pgt[3].innerHTML = data.last_ten_games[i-1].HR;                  
                     pgt[4].innerHTML = data.last_ten_games[i-1].RBI;
                     pgt[5].innerHTML = data.last_ten_games[i-1].R;
-                    pgt[6].innerHTML = data.last_ten_games[i-1].BB;
-                    pgt[7].innerHTML = data.last_ten_games[i-1].SB;
-
+                    pgt[6].innerHTML = data.last_ten_games[i-1].SB;
+                    pgt[7].innerHTML = data.last_ten_games[i-1].BB;
+                    pgt[8].innerHTML = data.last_ten_games[i-1].K;
                 }
             };
 
