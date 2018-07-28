@@ -146,10 +146,13 @@ function displayAll(data){
                 
                 var game_log_table = document.getElementById("prev_games_table");
                 var games = data.last_ten_games;
-
-                //INSERT HEADER ROW 
+                
+                //INSERT HEADER ROW
+                
                 var row = game_log_table.insertRow(0);
                 row.className = "stat_category";
+                
+                if(game_log_table.rows.length == 1){
                 
                 var OPP = row.insertCell(0);
                 var H = row.insertCell(1);
@@ -160,7 +163,7 @@ function displayAll(data){
                 var SB = row.insertCell(6);
                 var BB = row.insertCell(7);
                 var K = row.insertCell(8);
-                
+                               
                 OPP.innerHTML = "OPP";
                 H.innerHTML = "H";
                 AB.innerHTML = "AB";
@@ -221,7 +224,7 @@ function displayAll(data){
                     pgt[7].innerHTML = data.last_ten_games[i-1].BB;
                     pgt[8].innerHTML = data.last_ten_games[i-1].K;
                 }*/               
-
+                }       
             };
 
             // When the user clicks on <span> (x), close the modal

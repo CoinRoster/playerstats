@@ -133,7 +133,8 @@ function displayAll(data){
                 //INSERT HEADER ROW 
                 var row = game_log_table.insertRow(0);
                 //row.className = "stat_category";
-                
+                if(game_log_table.rows.length == 2){
+                    
                 var End_Date = row.insertCell(0);
                 var Tournament = row.insertCell(1);
                 var POS = row.insertCell(2);
@@ -220,6 +221,7 @@ function displayAll(data){
                     R2.innerHTML = r2;
                     R3.innerHTML = r3;
                     R4.innerHTML = r4;
+                }
                 }
                 /*
                 var pgt = document.getElementById("prev_games_table").rows[0].cells;

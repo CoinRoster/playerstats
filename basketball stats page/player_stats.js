@@ -271,6 +271,8 @@
                 var row = game_log_table.insertRow(0);
                 row.className = "stat_category";
                 
+                if(game_log_table.rows.length == 1){
+                
                 var OPP = row.insertCell(0);
                 var MIN = row.insertCell(1);
                 var PTS = row.insertCell(2);
@@ -337,6 +339,7 @@
                     pgt[7].innerHTML = data.last_five_games[i-1].TO;
 
                 }*/
+                }
             };
 
             // When the user clicks on <span> (x), close the modal
