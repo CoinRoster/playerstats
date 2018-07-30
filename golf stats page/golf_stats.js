@@ -86,12 +86,10 @@ function displayAll(data){
 
 
                 var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Previous Tournaments";
-                
+                prev_games.innerHTML = "Previous Tournaments";                
                 var game_log_table = document.getElementById("prev_games_table");
                 var games = data.last_five_tournaments;
-
-                //INSERT HEADER ROW 
+ 
                 var row = game_log_table.insertRow(0);
                 if (data.last_five_tournaments.length == 0){
                     var End_Date = row.insertCell(0);
@@ -112,7 +110,7 @@ function displayAll(data){
                 sst[3].innerHTML = data.stats[3].name;
                 var sst = document.getElementById("season_stats_table").rows[2].cells;
                 sst[0].innerHTML = (data.stats[4].name).replace("Average", "AVG");
-                sst[1].innerHTML = (data.stats[5].name).replace("Percentage", "%");
+                sst[1].innerHTML = (data.stats[5].name).replace("Average", "AVG");
                 sst[2].innerHTML = data.stats[6].name;
                 sst[3].innerHTML = (data.stats[7].name).replace("Percentage", "%");
                 
@@ -132,7 +130,6 @@ function displayAll(data){
 
                 //INSERT HEADER ROW 
                 var row = game_log_table.insertRow(0);
-                //row.className = "stat_category";
                 if(game_log_table.rows.length == 2){
                     
                 var End_Date = row.insertCell(0);
@@ -178,9 +175,9 @@ function displayAll(data){
                     var TOT = row.insertCell(7);
                     
                     var endDate = games[i-1].endDate;
-                    var event = games[i-1].trn.trnName;
-                    var pos = games[i-1].finPos.value;
-                    var total = '(' + games[i-1].scr.relToPar + ')';
+                    var trnName = games[i-1].trn.trnName;
+                    var finPos = games[i-1].finPos.value;
+                    var relToPar = '(' + games[i-1].scr.relToPar + ')';
                     var r1 = games[i-1].scr.rounds;                  
                     if(r1.length < 1){
                         r1 = "0";
@@ -214,9 +211,9 @@ function displayAll(data){
                     }
                     // Add some text to the new cells:
                     End_Date.innerHTML = endDate;
-                    Tournament.innerHTML = event;
-                    POS.innerHTML = pos;
-                    TOT.innerHTML = total;                  
+                    Tournament.innerHTML = trnName;
+                    POS.innerHTML = finPos;
+                    TOT.innerHTML = relToPar;                  
                     R1.innerHTML = r1;
                     R2.innerHTML = r2;
                     R3.innerHTML = r3;
