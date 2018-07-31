@@ -39,17 +39,17 @@ function displayAll(data){
                    stats_tab.style.display = "block";
                 };
                 
-                function myFunction(x) {
-                    if (x.matches) { // If media query matches
+                function photo_align(media_query) {
+                    if (media_query.matches) { // If media query matches
                         document.getElementById('playerphoto').setAttribute('align', 'center');
                     }
                     else {
                         document.getElementById('playerphoto').setAttribute('align', 'auto');
                     }
                 }
-                var x = window.matchMedia("(max-width: 767px)");
-                myFunction(x); // Call listener function at run time
-                x.addListener(myFunction); // Attach listener function on state changes
+                var media_query = window.matchMedia("(max-width: 767px)");
+                photo_align(media_query); // Call listener function at run time
+                media_query.addListener(photo_align); // Attach listener function on state changes
 
 
                 var header = document.getElementById("player_name");
@@ -59,6 +59,7 @@ function displayAll(data){
 
                 var player_pic = document.getElementById('headshot');
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/' + data.id + '.png&w=350&h=254';
+                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');            
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/' + data.team_abr + '.png&w=110&h=110&transparent=true';
 

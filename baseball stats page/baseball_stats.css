@@ -58,13 +58,17 @@ and open the template in the editor.
                 margin-bottom: -1vh;
                 float: right;
                 padding: 8px;
-                border:0;
+                border: 0;
                 border-radius: 5px;
                 background-color: #00ff6a;
                 color: white;
                 font-size: 1.2vw; 
                 font-family: sans-serif;
                 font-weight: bold;
+            }
+            #draft_button:hover{
+                background-color: orange;
+                color: black;
             }
             #newsfeed{
                 display: none;
@@ -132,7 +136,6 @@ and open the template in the editor.
                 font-family: sans-serif;
                 font-weight: bold;
             }
-            
             .modal-body{
                 max-height: 410px;
                 overflow: scroll;
@@ -305,4 +308,3 @@ and open the template in the editor.
                 }
                 
             }
-
