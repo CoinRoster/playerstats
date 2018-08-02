@@ -25,6 +25,10 @@ function displayAll(data){
             link.onclick = function() {
                 modal.style.display = "block";
                 
+                $(document).ready(function() {
+                    $(".modal-body").customScrollbar();
+                });
+                
                 var news_button = document.getElementById("news_tab");
                 var stats_button = document.getElementById("stats_tab");
                 var news_tab = document.getElementById("newsfeed");
@@ -33,6 +37,13 @@ function displayAll(data){
                 news_button.onclick = function() {
                    news_tab.style.display = "block";
                    stats_tab.style.display = "none";
+                   setTimeout(function() {
+                        var doc = document.getElementById('twitter-widget-0').contentWindow.document;
+                        var tweets = doc.getElementsByClassName("timeline-Tweet-text");
+                        for (var i = 0; i < tweets.length; i++) {
+                            tweets[i].style.fontSize = "100%";
+                        }
+                   }, 100);
                 };
                 stats_button.onclick = function() {
                    news_tab.style.display = "none";
@@ -59,7 +70,6 @@ function displayAll(data){
 
                 var player_pic = document.getElementById('headshot');
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/' + data.id + '.png&w=350&h=254';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/3246.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');            
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/' + data.team_abr + '.png&w=110&h=110&transparent=true';
 
@@ -69,8 +79,6 @@ function displayAll(data){
                 list_info.innerHTML = 'Pos: ' + data.pos;
                 var list_info = document.getElementById("height_list");
                 list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.weight;
-                //var list_info = document.getElementById("weight_list");
-                //list_info.innerHTML = 'Weight: ' + data.Weight;
                 var list_info = document.getElementById("born_list");
                 list_info.innerHTML = 'Born: ' + data.birthString;
 

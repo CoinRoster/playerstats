@@ -34,6 +34,13 @@ function displayAll(data){
                 news_button.onclick = function() {
                    news_tab.style.display = "block";
                    stats_tab.style.display = "none";
+                   setTimeout(function() {
+                        var doc = document.getElementById('twitter-widget-0').contentWindow.document;
+                        var tweets = doc.getElementsByClassName("timeline-Tweet-text");
+                        for (var i = 0; i < tweets.length; i++) {
+                            tweets[i].style.fontSize = "100%";
+                        }
+                   }, 100);                   
                 };
                 stats_button.onclick = function() {
                    news_tab.style.display = "none";
@@ -60,11 +67,8 @@ function displayAll(data){
 
                 var player_pic = document.getElementById('headshot');
                 player_pic.src = 'https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_2.0,f_auto,g_face:center,h_160,q_auto,w_250/headshots_' + data.pga_id + '.png';
-                //player_pic.src = 'https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_2.0,f_auto,g_face:center,h_254,q_auto,w_350/headshots_08793.png';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/golf/players/full/462.png&w=350&h=254';
                 var country_flag = document.getElementById('flag');
                 country_flag.src = 'http://a.espncdn.com/golfonline/img/flags/' +data.country_abr+ '.jpg';
-                //country_flag.src = 'http://a.espncdn.com/golfonline/img/flags/usa.jpg';
 
                 var list_info = document.getElementById("country_list");
                 list_info.innerHTML = 'Country: ' + data.country_abr;
@@ -81,9 +85,6 @@ function displayAll(data){
                 table_info.innerHTML = data.Weight;
                 var table_info = document.getElementById("born_table");
                 table_info.innerHTML = data.birthString;
-
-
-
 
                 var prev_games = document.getElementById("prev_games");
                 prev_games.innerHTML = "Previous Tournaments";                

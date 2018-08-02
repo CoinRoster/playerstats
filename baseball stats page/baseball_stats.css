@@ -6,24 +6,29 @@ and open the template in the editor.
 /* 
     Created on : 25-Jul-2018, 1:38:15 PM
 */
-            ::-webkit-scrollbar {
-                width: 0px;
-                height: 0px;               
+            .modal-body::-webkit-scrollbar {
+                display: none;               
+            }
+            html{
+                -ms-overflow-style: none;
             }
             body{
                 background-color: rgb(35,36,38);
             }
             table{
-                width:100%;       
+                width:100%;
             }
             th, td {
-                padding: 4px; 
+                padding: 4px;
+                padding-left: 10px;
+                padding-right: 10px;
+                max-width: 0px;
                 text-align: left;
                 background-color: #f2f2f2;
                 font-family: verdana;
                 font-size: 12px;
                 color: #c9dee0;
-                background-color: grey;  
+                background-color: grey;
             }
             caption{
                 padding-left: 5px;
@@ -48,6 +53,7 @@ and open the template in the editor.
                 border: transparent;
                 border-radius: 10px;
                 border-top-left-radius: 0px;
+                overflow: auto;
             }
             #footer{
                 padding: 0px;
@@ -65,10 +71,6 @@ and open the template in the editor.
                 font-size: 1.2vw; 
                 font-family: sans-serif;
                 font-weight: bold;
-            }
-            #draft_button:hover{
-                background-color: orange;
-                color: black;
             }
             #newsfeed{
                 display: none;
@@ -138,7 +140,7 @@ and open the template in the editor.
             }
             .modal-body{
                 max-height: 410px;
-                overflow: scroll;
+                overflow: auto;
                 padding: 0px;
             }
             .seperator{
@@ -181,7 +183,7 @@ and open the template in the editor.
                 border: 5px solid rgb(220,222,224);//#5ea600;
                 border-radius: 15px;
                 max-height: 510px;
-                overflow: auto; 
+                overflow: auto;
             }
             /* The Close Button */
             .close {

@@ -161,6 +161,13 @@
                 news_button.onclick = function() {
                    news_tab.style.display = "block";
                    stats_tab.style.display = "none";
+                   setTimeout(function() {
+                        var doc = document.getElementById('twitter-widget-0').contentWindow.document;
+                        var tweets = doc.getElementsByClassName("timeline-Tweet-text");
+                        for (var i = 0; i < tweets.length; i++) {
+                            tweets[i].style.fontSize = "100%";
+                        }
+                   }, 100);                   
                 };
                 stats_button.onclick = function() {
                    news_tab.style.display = "none";
@@ -186,15 +193,9 @@
                 header.innerHTML = "Kevin Durant";
 
                 var player_pic = document.getElementById('headshot');
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/13934.png&w=350&h=254';
                 player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/' + data.player_id + '.png&w=350&h=254';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=350&h=254';
-                //player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/golf/players/full/4848.png&w=350&h=254';
                 var team_logo = document.getElementById('logo');
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png&w=110&h=110&transparent=true';
                 team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/' +data.team+'.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gsw.png&w=110&h=110&transparent=true';
-                //team_logo.src = 'http://a.espncdn.com/golfonline/img/flags/usa.jpg';
 
                 var list_info = document.getElementById("team_list");
                 list_info.innerHTML = 'Team: ' + data.team;
@@ -202,8 +203,6 @@
                 list_info.innerHTML = 'Pos: ' + data.pos;
                 var list_info = document.getElementById("height_list");
                 list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.Weight;
-                //var list_info = document.getElementById("weight_list");
-                //list_info.innerHTML = 'Weight: ' + data.Weight;
                 var list_info = document.getElementById("born_list");
                 list_info.innerHTML = 'Born: ' + data.birthString;
 
