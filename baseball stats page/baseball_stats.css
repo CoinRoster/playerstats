@@ -22,7 +22,15 @@ and open the template in the editor.
                     position: relative;
                 }
             }
-            @media screen and (max-width: 576px) {
+            @media screen and (max-width: 767px) and (min-width: 415px) {
+                .responsive{
+                    width: 100%;
+                    float: left;
+                    position: relative;
+                }
+            
+            }
+            @media screen and (max-width: 575px) {
                 .responsive{
                     width: 100%;
                     float: left;
