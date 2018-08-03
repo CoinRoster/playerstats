@@ -101,6 +101,9 @@ function displayAll(data){
                 season_stats.innerHTML = data.year_stats.STAT_TYPE;
 
                 var sst = document.getElementById("season_stats_table").rows[0].cells;
+                for(i = 0;i <= 10;i++){
+                   sst[i].className = "stat_category";
+                }
                 sst[0].innerHTML = "GP";
                 sst[1].innerHTML = "AB";
                 sst[2].innerHTML = "AVG";
@@ -113,6 +116,9 @@ function displayAll(data){
                 sst[9].innerHTML = "K";
                 sst[10].innerHTML = "OPS";
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
+                for(i = 0;i <= 10;i++){
+                   sst[i].className = "dashboard_td";
+                }
                 sst[0].innerHTML = data.year_stats.GP;
                 sst[1].innerHTML = data.year_stats.AB;
                 sst[2].innerHTML = data.year_stats.AVG;
@@ -127,8 +133,11 @@ function displayAll(data){
             
                 var career_stats = document.getElementById("career_stats");
                 career_stats.innerHTML = "Career Stats";
-
+                
                 var cst = document.getElementById("career_stats_table").rows[0].cells;
+                for(i = 0;i <= 10;i++){
+                   cst[i].className = "stat_category";
+                }
                 cst[0].innerHTML = "GP";
                 cst[1].innerHTML = "AB";
                 cst[2].innerHTML = "AVG";
@@ -141,6 +150,9 @@ function displayAll(data){
                 cst[9].innerHTML = "K";
                 cst[10].innerHTML = "OPS";
                 var cst = document.getElementById("career_stats_table").rows[1].cells;
+                for(i = 0;i <= 10;i++){
+                   cst[i].className = "dashboard_td";
+                }
                 cst[0].innerHTML = data.career_stats.GP;
                 cst[1].innerHTML = data.career_stats.AB;
                 cst[2].innerHTML = data.career_stats.AVG;
@@ -162,19 +174,28 @@ function displayAll(data){
                 //INSERT HEADER ROW
                 
                 var row = game_log_table.insertRow(0);
-                row.className = "stat_category";
+                //row.className = "stat_category";
                 
                 if(game_log_table.rows.length == 1){
                 
                 var OPP = row.insertCell(0);
+                OPP.className = "stat_category";
                 var H = row.insertCell(1);
+                H.className = "stat_category";
                 var AB = row.insertCell(2);
+                AB.className = "stat_category";
                 var HR = row.insertCell(3);
+                HR.className = "stat_category";
                 var RBI = row.insertCell(4);
+                RBI.className = "stat_category";
                 var R = row.insertCell(5);
+                R.className = "stat_category";
                 var SB = row.insertCell(6);
+                SB.className = "stat_category";
                 var BB = row.insertCell(7);
+                BB.className = "stat_category";
                 var K = row.insertCell(8);
+                K.className = "stat_category";
                                
                 OPP.innerHTML = "OPP";
                 H.innerHTML = "H";
@@ -191,7 +212,8 @@ function displayAll(data){
 
                     // Create an empty <tr> element and add it to the 2nd position of the table (header row is first):
                     var row = game_log_table.insertRow(i);
-
+                    //row.className = "td";
+                     
                     var OPP = row.insertCell(0);
                     var H = row.insertCell(1);
                     var AB = row.insertCell(2);
@@ -201,7 +223,12 @@ function displayAll(data){
                     var SB = row.insertCell(6);
                     var BB = row.insertCell(7);
                     var K = row.insertCell(8);
-
+                    
+                    
+                    var stat_type = [OPP, H, AB, HR, RBI, R, SB, BB, K];
+                    for(var j = 0;j < stat_type.length;j++){
+                        stat_type[j].className = "dashboard_td";
+                    } 
                     // Add some text to the new cells:
                     OPP.innerHTML = games[i-1].OPP + "<br/>" + games[i-1].SCORE;
                     H.innerHTML = games[i-1].H;

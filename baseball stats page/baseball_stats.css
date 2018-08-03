@@ -6,21 +6,45 @@ and open the template in the editor.
 /* 
     Created on : 25-Jul-2018, 1:38:15 PM
 */
-            ::-webkit-scrollbar {
-                display: none;  
-                
+            
+            //.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}
+            //.modal{overflow-x:hidden;overflow-y:auto}
+            //.modal-content{position:relative;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;outline:0;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5)}
+            //.modal-content{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.5);box-shadow:0 5px 15px rgba(0,0,0,.5)}
+            //.modal-body{position:relative;padding:15px}
+            .container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+            .img-responsive{display:block;max-width:100%;height:auto}
+            
+            @media screen and (min-width: 576px) {
+                .responsive{
+                    width: 50%;
+                    float: left;
+                    position: relative;
+                }
             }
-            html{
+            @media screen and (max-width: 576px) {
+                .responsive{
+                    width: 100%;
+                    float: left;
+                    position: relative;
+                }
+            }
+            .modal-body::-webkit-scrollbar {
+                display: none;    
+            }
+            .modal-content::-webkit-scrollbar {
+                display: none;    
+            }
+            .modal-body{
                 -ms-overflow-style: none;
             }
-            body{
-                background-color: rgb(35,36,38);
-            }
-            table{
+            .dashboard_table{
                 width:100%;
                 overflow: scroll;
+                border-spacing: 0;
+                border-collapse: collapse;
             }
-            th, td {
+            .dashboard_td {
                 padding: 4px;
                 padding-left: 10px;
                 padding-right: 10px;
@@ -32,7 +56,11 @@ and open the template in the editor.
                 color: #c9dee0;
                 background-color: grey;
             }
-            caption{
+            .dashboard_caption{
+                padding-top: 8px;
+                padding-bottom: 8px;
+                background-color: #232426;
+                text-align: left;
                 padding-left: 5px;
                 font-size: 15px; 
                 margin-bottom: 0%;
@@ -41,9 +69,11 @@ and open the template in the editor.
                 background-color: #232426;
                 font-weight: bold;
             }
-            p{
+            .dashboard_p{
                 //margin-top: 0%;
-                margin-bottom: 0%;
+                //margin-bottom: 0%;
+                line-height: 5px;
+                //margin: 0;
             }
             #playerphoto{
                 margin-top: 2%;
@@ -82,20 +112,27 @@ and open the template in the editor.
             }
             #link{
                 font-family: verdana;
-                color: #00ff6a;
-                background-color: #232426;
+                color: black;                
                 font-size: 15px;
                 font-weight: bold; 
             }
             #player_name, #mobile_playername{
                 font-size: 2.2vw;
+                margin-bottom: 2%;
+                //line-height: 5px;
                 font-family: sans-serif;//Arial;
                 color: white;//#00ff6a;
                 white-space: nowrap;
+                font-weight: lighter;
             }
             #tableinfo{
                 display: none;
                 border: 0;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                background-color: #232426;
+                text-align: left;
+                overflow-y: hidden;
             }
             #listinfo{
                 font-size: 1.1vw;
@@ -128,6 +165,7 @@ and open the template in the editor.
             }
             #underline{
                 margin-bottom: 2%;
+                opacity: .3;
             }
             .tab{
                 border: 1px solid white;
@@ -144,16 +182,28 @@ and open the template in the editor.
                 max-height: 410px;
                 overflow: auto;
                 padding: 0px;
+                overflow-x: hidden;
             }
             .seperator{
                 width: 100%;
                 //padding-top: 5px;
                 margin-top: 0%;
+                margin-bottom: 2%;
                 opacity: .3;
                 //color: orange;
             }
             .stat_category{
                 font-weight: bold;
+                padding: 4px;
+                padding-left: 10px;
+                padding-right: 10px;
+                max-width: 0px;
+                text-align: left;
+                background-color: #f2f2f2;
+                font-family: verdana;
+                font-size: 12px;
+                color: #c9dee0;
+                background-color: grey;
             }
             .table_header{
                 font-family: sans-serif;//verdana;
@@ -181,11 +231,11 @@ and open the template in the editor.
                 background-color: rgb(55,56,57);//rgb(35,36,38);
                 margin: auto;
                 padding: 20px;
-                width: 60%;
+                width: 55%;
                 border: 5px solid rgb(220,222,224);//#5ea600;
                 border-radius: 15px;
                 max-height: 510px;
-                overflow: auto;
+                overflow: scroll;
             }
             /* The Close Button */
             .close {
@@ -211,22 +261,24 @@ and open the template in the editor.
                 #mobile_playername{
                     font-size: 8vw;
                     text-align: center;
+                    margin-top: -5%;
+                    margin-bottom: 5%;
                 }
                 #season_stats_table, #career_stats_table, #prev_games_table{
-                    width: 150%;
+                    width: 190%;
                 }
-                caption{
+                .dashboard_caption{
                     font-size: 4vw;
                     padding-left: 5px;
                 }
-                th,td{
+                .dashboard_td{
                     font-size: 3vw;
                 }
                 .modal{
                     padding-top: 20px;
                 }
                 .modal-content {
-                    width: 90%;
+                    width: 75%;
                     border: 5px solid white;//#5ea600;
                     //height: 100vh;
                 }
@@ -242,7 +294,7 @@ and open the template in the editor.
                     color: white;
                 }
                 .seperator{
-                    width: 100%;
+                    width: 100%;                 
                 }
                 .tab{
                     font-size: 3vw;
@@ -257,6 +309,7 @@ and open the template in the editor.
                     display: inherit;
                     border: transparent;
                     border-radius: 10px;
+                    margin-bottom: 5%;
                     //white-space: nowrap;
                 }    
                 #player_name{
@@ -283,7 +336,7 @@ and open the template in the editor.
                 }
             }
             @media screen and (max-width: 767px) and (min-width: 415px) {
-                th,td{
+                .dashboard_td{
                     font-size: 2vw;
                 }
                 #team_table, #pos_table, #height_table, #weight_table, #born_table{
@@ -300,7 +353,7 @@ and open the template in the editor.
                     font-size:2vw;
                     text-align: center;
                 }
-                caption{
+                .dashboard_caption{
                     font-size: 2vw;
                     padding-left: 5px;
                 }
