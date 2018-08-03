@@ -6,9 +6,8 @@ and open the template in the editor.
 /* 
     Created on : 13-Jul-2018, 2:49:53 PM
 */
-            .modal-body::-webkit-scrollbar {
-                width: 0px;
-                height: 0px;               
+            ::-webkit-scrollbar {
+                display: none;               
             }
             html{
                 -ms-overflow-style: none;
@@ -141,7 +140,7 @@ and open the template in the editor.
             
             .modal-body{
                 max-height: 410px;
-                overflow: scroll;
+                overflow: auto;
                 padding: 0px;
             }
             .seperator{

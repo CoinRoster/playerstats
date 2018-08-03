@@ -37,11 +37,14 @@ function displayAll(data){
                    setTimeout(function() {
                         var doc = document.getElementById('twitter-widget-0').contentWindow.document;
                         var tweets = doc.getElementsByClassName("timeline-Tweet-text");
+                        var media = doc.getElementsByClassName("timeline-Tweet-media");
                         for (var i = 0; i < tweets.length; i++) {
                             tweets[i].style.fontSize = "100%";
+                            tweets[i].style.lineHeight = "16px";
+                            media[i].style.display = "none";
                         }
-                   }, 100);                   
-                };
+                   }, 100);
+               };
                 stats_button.onclick = function() {
                    news_tab.style.display = "none";
                    stats_tab.style.display = "block";

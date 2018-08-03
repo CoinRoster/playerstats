@@ -6,8 +6,9 @@ and open the template in the editor.
 /* 
     Created on : 25-Jul-2018, 1:38:15 PM
 */
-            .modal-body::-webkit-scrollbar {
-                display: none;               
+            ::-webkit-scrollbar {
+                display: none;  
+                
             }
             html{
                 -ms-overflow-style: none;
@@ -17,6 +18,7 @@ and open the template in the editor.
             }
             table{
                 width:100%;
+                overflow: scroll;
             }
             th, td {
                 padding: 4px;
