@@ -24,11 +24,7 @@ function displayAll(data){
             // When the user clicks the button, open the modal 
             link.onclick = function() {
                 modal.style.display = "block";
-                
-                $(document).ready(function() {
-                    $(".modal-body").customScrollbar();
-                });
-                
+                              
                 var news_button = document.getElementById("news_tab");
                 var stats_button = document.getElementById("stats_tab");
                 var news_tab = document.getElementById("newsfeed");
@@ -40,11 +36,10 @@ function displayAll(data){
                    setTimeout(function() {
                         var doc = document.getElementById('twitter-widget-0').contentWindow.document;
                         var tweets = doc.getElementsByClassName("timeline-Tweet-text");
-                        var media = doc.getElementsByClassName("timeline-Tweet-media");
                         for (var i = 0; i < tweets.length; i++) {
                             tweets[i].style.fontSize = "100%";
                             tweets[i].style.lineHeight = "16px";
-                            media[i].style.display = "none";
+                            doc.getElementsByClassName("timeline-Tweet-media")[i].style.display = "none";
                         }
                    }, 100);
                 };
@@ -65,40 +60,24 @@ function displayAll(data){
                 photo_align(media_query); // Call listener function at run time
                 media_query.addListener(photo_align); // Attach listener function on state changes
 
+                document.getElementById("player_name").innerHTML = data.name;
+                document.getElementById("mobile_playername").innerHTML = data.name;
+                
+                document.getElementById('headshot').src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/' + data.id + '.png&w=350&h=254';           
+                document.getElementById('logo').src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/' + data.team_abr + '.png&w=110&h=110&transparent=true';
 
-                var header = document.getElementById("player_name");
-                header.innerHTML = data.name;
-                var header = document.getElementById("mobile_playername");
-                header.innerHTML = data.name;
+                document.getElementById("team_list").innerHTML = 'Team: ' + data.team_abr;
+                document.getElementById("pos_list").innerHTML = 'Pos: ' + data.pos;
+                document.getElementById("height_list").innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.weight;
+                document.getElementById("born_list").innerHTML = 'Born: ' + data.birthString;
 
-                var player_pic = document.getElementById('headshot');
-                player_pic.src = 'http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/' + data.id + '.png&w=350&h=254';
-                var team_logo = document.getElementById('logo');            
-                team_logo.src = 'http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/' + data.team_abr + '.png&w=110&h=110&transparent=true';
+                document.getElementById("team_table").innerHTML = data.team_abr;
+                document.getElementById("pos_table").innerHTML = data.pos;
+                document.getElementById("height_table").innerHTML = data.height;
+                document.getElementById("weight_table").innerHTML = data.weight;
+                document.getElementById("born_table").innerHTML = data.birthString;
 
-                var list_info = document.getElementById("team_list");
-                list_info.innerHTML = 'Team: ' + data.team_abr;
-                var list_info = document.getElementById("pos_list");
-                list_info.innerHTML = 'Pos: ' + data.pos;
-                var list_info = document.getElementById("height_list");
-                list_info.innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.weight;
-                var list_info = document.getElementById("born_list");
-                list_info.innerHTML = 'Born: ' + data.birthString;
-
-                var table_info = document.getElementById("team_table");
-                table_info.innerHTML = data.team_abr;
-                var table_info = document.getElementById("pos_table");
-                table_info.innerHTML = data.pos;
-                var table_info = document.getElementById("height_table");
-                table_info.innerHTML = data.height;
-                var table_info = document.getElementById("weight_table");
-                table_info.innerHTML = data.weight;
-                var table_info = document.getElementById("born_table");
-                table_info.innerHTML = data.birthString;
-
-            
-                var season_stats = document.getElementById("season_stats");
-                season_stats.innerHTML = data.year_stats.STAT_TYPE;
+                document.getElementById("season_stats").innerHTML = data.year_stats.STAT_TYPE;
 
                 var sst = document.getElementById("season_stats_table").rows[0].cells;
                 for(i = 0;i <= 10;i++){
@@ -115,6 +94,7 @@ function displayAll(data){
                 sst[8].innerHTML = "BB";
                 sst[9].innerHTML = "K";
                 sst[10].innerHTML = "OPS";
+                
                 var sst = document.getElementById("season_stats_table").rows[1].cells;
                 for(i = 0;i <= 10;i++){
                    sst[i].className = "dashboard_td";
@@ -131,8 +111,7 @@ function displayAll(data){
                 sst[9].innerHTML = data.year_stats.K;
                 sst[10].innerHTML = data.year_stats.OPS;
             
-                var career_stats = document.getElementById("career_stats");
-                career_stats.innerHTML = "Career Stats";
+                document.getElementById("career_stats").innerHTML = "Career Stats";
                 
                 var cst = document.getElementById("career_stats_table").rows[0].cells;
                 for(i = 0;i <= 10;i++){
@@ -164,9 +143,8 @@ function displayAll(data){
                 cst[8].innerHTML = data.career_stats.BB;
                 cst[9].innerHTML = data.career_stats.K;
                 cst[10].innerHTML = data.career_stats.OPS;
-            
-                var prev_games = document.getElementById("prev_games");
-                prev_games.innerHTML = "Game Log";
+
+                document.getElementById("prev_games").innerHTML = "Game Log";
                 
                 var game_log_table = document.getElementById("prev_games_table");
                 var games = data.last_ten_games;
