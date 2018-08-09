@@ -12,16 +12,13 @@ function displayGolfDashboard(){
     
     //document.getElementById('golf_headshot').src = 'https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_2.0,f_auto,g_face:center,h_160,q_auto,w_250/headshots_30921.png';
     document.getElementById('golf_headshot').src = 'https://pga-tour-res.cloudinary.com/image/upload/c_fill,d_headshots_default.png,dpr_2.0,f_auto,g_face:center,h_160,q_auto,w_250/headshots_' + data.pga_id + '.png';
-    function onImageLoadError() {
-        document.getElementById('golf_headshot').src = 'default-golf.png';
-        //document.getElementById('golf_headshot').style.height = "160";
-        //document.getElementById('golf_headshot').style.weight = "5";
-    }
-    document.getElementById('golf_headshot').addEventListener("error", onImageLoadError);     
     
-    document.getElementById('golf_logo').src = 'http://a.espncdn.com/golfonline/img/flags/' +data.country_abr+ '.jpg';
-           
-    document.getElementById("golf_team_list").innerHTML = 'Country: ' + data.country_abr;;
+    document.getElementById('golf_logo').src = 'http://a.espncdn.com/golfonline/img/flags/' +data.country_abr+ '.jpg';   
+    function onImageLoadError() {
+        document.getElementById('golf_logo').style.visibility = "hidden";
+    }
+    document.getElementById('golf_logo').addEventListener("error", onImageLoadError);     
+       
     document.getElementById("golf_height_list").innerHTML = 'Height: ' + data.height + ' · Weight: ' + data.Weight;
     document.getElementById("golf_born_list").innerHTML = 'Born: ' + data.birthString;
 
@@ -120,7 +117,7 @@ function displayGolfDashboard(){
             var endDate = games[i-1].endDate;
             var trnName = games[i-1].trn.trnName;
             var finPos = games[i-1].finPos.value;
-            var relToPar = '(' + games[i-1].scr.relToPar + ')';
+            var relToPar = games[i-1].scr.relToPar;
             var r1 = games[i-1].scr.rounds;                  
             if(r1.length < 1){
                 r1 = "0";
