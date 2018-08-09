@@ -1,4 +1,4 @@
-function displayBaseballDash(){
+function setupDashboard(){
     // Get the modal
     document.getElementById('stats_modal').style.display = "block";
     document.getElementById('stats_model_content').style.display = "table";

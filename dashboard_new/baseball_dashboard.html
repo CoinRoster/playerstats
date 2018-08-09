@@ -13,7 +13,7 @@
         <tr>
             <td>
                 <div class="modal-content">
-                    <span id="close" class="close">&times;</span>
+                    <span id="close" class="close" onclick="close_dash()">&times;</span>
                     <div class="modal-body">
 
                         <div class="container-fluid mobile_header">
@@ -181,10 +181,6 @@
         }
         add_player(window.player_id);
     }
-    
-    $('#close').click(function() {
-        close_dash();
-    });
     
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
